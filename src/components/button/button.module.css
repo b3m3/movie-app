@@ -1,3 +1,8 @@
+.wrapp_btn {
+  display: flex;
+  justify-content: end;
+}
+
 .button {
   cursor: pointer;
   display: inline-block;

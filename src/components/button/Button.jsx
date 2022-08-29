@@ -2,7 +2,9 @@ import style from './button.module.css';
 
 const Button = ({ name }) => {
   return (
-    <button className={style.button}>{name}</button>
+    <div className={style.wrapp_btn}>
+      <button className={style.button}>{name}</button>
+    </div>
   );
 }
 

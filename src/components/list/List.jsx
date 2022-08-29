@@ -1,35 +1,10 @@
-import { useEffect, useState } from 'react';
-
 import Button from '../button/Button';
-import { getApiResource } from '../../service/getApiResource';
 import { POSTER_S } from '../../constans/api';
-
 import NoImage from './img/no-image.jpg';
 
 import style from './list.module.css';
 
-const List = ({ url }) => {
-  const [listData, setListData] = useState([]);
-  
-  const getResults = async () => {
-    const res = await getApiResource(url);
-
-    if(res) {
-      const movieList = res.results.map(({ id, poster_path, release_date, title, vote_average }) => {
-        return { id, poster_path, release_date, title, vote_average }
-      });
-
-      setListData(movieList);
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  useEffect(() => {
-    getResults();
-  }, []);
-
+const List = ({ listData }) => {
   return (
     <>
       <ul className={style.list}>
@@ -47,9 +22,7 @@ const List = ({ url }) => {
         ))}
       </ul>
 
-      <div className={style.more}>
-        <Button name="More" />
-      </div>
+      <Button name="More" />
     </>
   );
 }
