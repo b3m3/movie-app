@@ -1,17 +1,21 @@
 const MOVIEDB_ROOT = 'https://api.themoviedb.org/3/';
-const MOVIEDB_API = '?api_key='+process.env.REACT_APP_WEATHER_API_KEY;
-const MOVIEDB_LANG = '&language=';
-const MOVIEDB_PAGE = '/&page=';
+const MOVIEDB_API = `?api_key=${process.env.REACT_APP_API_KEY}`;
 
-const MOVIEDB_MOVIES = 'movie/';
-const MOVIEDB_TV = 'tv/';
+const MOVIES = 'movie/';
+const TV = 'tv/';
 
 // categoryes
-const MOVIEDB_LATEST = 'latest';
-const MOVIEDB_POPULAR = 'popular';
-const MOVIEDB_TOP_RATED = 'top_rated';
-const MOVIEDB_NOW_PLAYUNG = 'now_playing';
+const LATEST = 'latest';
+const POPULAR = 'popular';
+const TOP_RATED = 'top_rated';
+const NOW_PLAYUNG = 'now_playing';
+
+export const LANG = '&language=';
+export const PAGE = '/&page=';
 
 // images
-const MOVIEDB_POSTER_S = 'https://image.tmdb.org/t/p/w500/';
-const MOVIEDB_POSTER_B = 'https://image.tmdb.org/t/p/original/';
+export const POSTER_S = 'https://image.tmdb.org/t/p/w500/';
+export const POSTER_B = 'https://image.tmdb.org/t/p/original/';
+
+// movies
+export const MOVIES_POPULAR = MOVIEDB_ROOT+MOVIES+POPULAR+MOVIEDB_API;
