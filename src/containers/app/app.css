@@ -21,6 +21,7 @@
 }
 
 :root {
+  --container: 83.125rem;
   --bg: #19161f;
   --grey: #757279;
 }
@@ -48,7 +49,25 @@ body {
 }
 
 .container {
-  max-width: 83.125rem;
+  max-width: var(--container);
   margin: 0 auto;
   padding: 0 .9375rem;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2.625rem;
+  color: #fff;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 83.125rem) {
+  h2 {
+    font-size: calc(24px + calc(32 - 24) * ((100vw - 320px) / (1330 - 320)));
+  }
 }

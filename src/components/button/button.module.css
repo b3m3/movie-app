@@ -4,7 +4,7 @@
   padding: .3125rem .9375rem;
   color: #fff;
   border-radius: .3125rem;
-  background: rgb(56, 93, 196);
+  background: var(--grey);
   font-size: 1rem;
   font-weight: 600;
   transition: .3s;
