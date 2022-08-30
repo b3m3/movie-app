@@ -9,7 +9,7 @@ const Header = () => {
   ]
 
   return (
-    <header>
+    <header className={style.header}>
       <div className="container">
         <div className={style.main}>
           <ul className={style.list}>

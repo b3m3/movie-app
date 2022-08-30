@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import MoviesPage from '../moviesPage/MoviesPage';
 import TvPage from '../tvPage/TvPage';
+import InfoPage from '../infoPage/InfoPage';
 import NotFoundPage from '../notFoundPage/NotFoundPage';
 
 import './app.css';
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<MoviesPage />}></Route>
             <Route path="/TvPage" element={<TvPage />}></Route>
+            <Route path="/:id" element={<InfoPage />}></Route>
             <Route path="*" element={<NotFoundPage />}></Route>
           </Routes>
         </main>

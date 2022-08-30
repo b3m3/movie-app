@@ -5,7 +5,7 @@ import { MOVIES_POPULAR, MOVIES_TOP_RATED, MOVIES_NOW_PLAYING } from '../../cons
 const MoviesPage = () => {
   const movies = [
     {title: 'Popular', url: MOVIES_POPULAR},
-    {title: 'Now playung', url: MOVIES_NOW_PLAYING},
+    {title: 'Now playing', url: MOVIES_NOW_PLAYING},
     {title: 'Top rated', url: MOVIES_TOP_RATED}];
 
   return (

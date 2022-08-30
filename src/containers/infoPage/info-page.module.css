@@ -1,0 +1,100 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+  align-items: start;
+  padding-top: 3.125rem;
+}
+
+.body {
+  display: grid;
+  gap: 3.125rem;
+  grid-template: minmax(550px, auto) / minmax(auto, 350px) 1fr;
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border-radius: 1.25rem;
+}
+
+.row {
+  display: flex;
+  gap: 1.875rem;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9375rem;
+  font-size: 1.125rem;
+}
+
+.genres li::first-letter{
+  text-transform: uppercase;
+}
+
+.backdrop {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .2;
+}
+
+.backdrop::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100px;
+  background-color: #000;
+}
+
+.image {
+  position: relative;
+  height: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overview {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 83.125rem) {
+  .main {
+    padding-top: calc(20px + calc(50 - 20) * ((100vw - 320px) / (1330 - 320)));
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .body {
+    display: grid;
+    gap: 1.25rem;
+    grid-template: minmax(550px, auto) auto / 1fr;
+  }
+}

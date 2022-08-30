@@ -1,15 +1,21 @@
+.header {
+  position: relative;
+  z-index: 50;
+}
+
 .main {
   padding: 2.5rem 0 1.25rem 0;
   min-height: 3.75rem;
   display: flex;
   align-items: center;
+  
 }
 
 .list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: .9375rem;
+  gap: 1.5625rem;
 }
 
 .list a {
