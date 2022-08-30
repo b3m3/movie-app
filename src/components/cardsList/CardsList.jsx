@@ -2,9 +2,9 @@ import Button from '../button/Button';
 import { POSTER_S } from '../../constans/api';
 import NoImage from './img/no-image.jpg';
 
-import style from './list.module.css';
+import style from './cards-list.module.css';
 
-const List = ({ listData }) => {
+const CardsList = ({ listData }) => {
   return (
     <>
       <ul className={style.list}>
@@ -17,7 +17,7 @@ const List = ({ listData }) => {
               <img src={POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
             </div>
 
-            <p>{title.length > 27 ? title.slice(0, 27) + '...' : title}</p> 
+            <p>{title && title.length > 27 ? title.slice(0, 27) + '...' : title}</p> 
           </li>
         ))}
       </ul>
@@ -27,4 +27,4 @@ const List = ({ listData }) => {
   );
 }
 
-export default List;
+export default CardsList;

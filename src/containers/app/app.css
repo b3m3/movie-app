@@ -54,6 +54,10 @@ body {
   padding: 0 .9375rem;
 }
 
+main {
+  padding-bottom: 3.125rem;
+}
+
 h2 {
   font-weight: 800;
   font-size: 2rem;

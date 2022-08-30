@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import List from '../list/List';
+import CardsList from '../cardsList/CardsList';
 import { getApiResource } from '../../service/getApiResource';
 import Error from '../error';
 
@@ -37,7 +37,7 @@ const Category = ({ title, url }) => {
           <h2>{title}</h2>
 
           {!errorApi 
-            ? <List listData={listData} /> 
+            ? <CardsList listData={listData} /> 
             : <Error />}
         </div>
       </div>
