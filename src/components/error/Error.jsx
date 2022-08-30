@@ -1,15 +1,12 @@
-import error from './img/error.png';
-
 import style from './error.module.css';
 
 const Error = () => {
   return (
     <div className={style.error}>
-      <img 
-      className={style.image}
-        src={error} 
-        alt="Error" 
-      />
+      <p>
+        An error has occurred. We cannot display data.<br />
+        Come back when we fix everything or reboot your page.
+      </p>
     </div>
   );
 }

@@ -2,12 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.image {
-  width: 100%;
-  height: 100%;
-  max-width: 25.625rem;
-  max-height: 14.375rem;
-  object-fit: cover;
+.error p {
+  font-weight: 500;
+  line-height: 1.7;
+  font-size: 1.125rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 5px #fff;
 }
+

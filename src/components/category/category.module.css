@@ -4,3 +4,9 @@
   flex-direction: column;
   gap: 1.25rem;
 }
+
+@media screen and (max-width: 83.125rem) {
+  .body  {
+    padding-top: calc(20px + calc(50 - 20) * ((100vw - 320px) / (1330 - 320)));
+  }
+}

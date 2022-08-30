@@ -14,8 +14,8 @@ const Category = ({ title, url }) => {
     const res = await getApiResource(url);
 
     if(res) {
-      const movieList = res.results.map(({ id, poster_path, release_date, title, vote_average }) => {
-        return { id, poster_path, release_date, title, vote_average }
+      const movieList = res.results.map(({ id, poster_path, release_date, title, name, vote_average }) => {
+        return { id, poster_path, release_date, title, name, vote_average }
       });
 
       setListData(movieList);

@@ -1,6 +1,6 @@
 .main {
-  padding: .625rem 0;
-  min-height: 5rem;
+  padding: 2.5rem 0 1.25rem 0;
+  min-height: 3.75rem;
   display: flex;
   align-items: center;
 }
@@ -15,7 +15,7 @@
 .list a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--grey);
   transition: .3s;
 }
@@ -26,4 +26,10 @@
 
 .list :global(a.active) {
   color: #fff;
+}
+
+@media screen and (max-width: 83.125rem) {
+  .list a {
+    font-size: calc(16px + calc(20 - 16) * ((100vw - 320px) / (1330 - 320)));
+  }
 }
