@@ -1,0 +1,29 @@
+.main {
+  padding: .625rem 0;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .9375rem;
+}
+
+.list a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--grey);
+  transition: .3s;
+}
+
+.list a:hover {
+  color: #fff;
+}
+
+.list :global(a.active) {
+  color: #fff;
+}
