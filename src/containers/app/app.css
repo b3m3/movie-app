@@ -34,7 +34,11 @@
   /* outline: unset; */
 }
 
-html, body, #root, .app {
+html {
+  height: 100%;
+}
+
+body, #root, .app {
   min-height: 100%;
 }
 
@@ -43,8 +47,8 @@ body {
   background: var(--bg);
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -60,6 +64,7 @@ main {
 }
 
 h2 {
+  display: inline-block;
   font-weight: 800;
   font-size: 2rem;
   line-height: 2.625rem;

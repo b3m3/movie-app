@@ -12,9 +12,11 @@ const CardsList = ({ listData }) => {
         {listData && listData.map(({ id, poster_path, title, name }) => (
           <li
             key={id}
-            className={style.card}
           >
-            <Link to={`/${id}`}>
+            <Link 
+              to={`/movies/${id}`}
+              className={style.card}
+            >
               <div className={style.poster}>
                 <img src={POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
               </div>

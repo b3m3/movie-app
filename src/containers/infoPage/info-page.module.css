@@ -9,6 +9,7 @@
 .body {
   display: grid;
   gap: 3.125rem;
+  width: 100%;
   grid-template: minmax(550px, auto) / minmax(auto, 350px) 1fr;
 }
 
@@ -18,7 +19,7 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.875rem;
+  gap: 1.25rem;
   background-color: rgba(0, 0, 0, 0.55);
   color: #fff;
   border-radius: 1.25rem;
@@ -26,7 +27,14 @@
 
 .row {
   display: flex;
+  align-items: center;
   gap: 1.875rem;
+}
+
+.country {
+  display: flex;
+  gap: .9375rem;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .genres {
@@ -34,6 +42,10 @@
   flex-wrap: wrap;
   gap: .9375rem;
   font-size: 1.125rem;
+}
+
+.genres li {
+  color: #41d383;
 }
 
 .genres li::first-letter{
@@ -46,20 +58,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   object-fit: cover;
   opacity: .2;
-}
-
-.backdrop::after {
-  display: block;
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100px;
-  background-color: #000;
 }
 
 .image {
@@ -76,6 +77,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .overview {
@@ -84,9 +86,47 @@
   line-height: 1.6;
 }
 
+.button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  gap: .9375rem;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.button:hover span:first-child {
+  transform: translateX(-5px);
+}
+
+.button span:first-child {
+  transition: .2s;
+}
+
+.button span:last-child {
+  font-size: 20px;
+}
+
+.rating {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  color: #000;
+}
+
 @media screen and (max-width: 83.125rem) {
   .main {
     padding-top: calc(20px + calc(50 - 20) * ((100vw - 320px) / (1330 - 320)));
+  }
+  .body {
+    gap: calc(15px + calc(50 - 15) * ((100vw - 320px) / (1330 - 320)));
   }
 }
 

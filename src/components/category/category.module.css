@@ -5,6 +5,16 @@
   gap: 2.1875rem;
 }
 
+.top {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 83.125rem) {
   .body  {
     padding-top: calc(20px + calc(50 - 20) * ((100vw - 320px) / (1330 - 320)));

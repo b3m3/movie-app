@@ -1,12 +1,14 @@
 import { NavLink } from 'react-router-dom';
 
+import { PAGE } from '../../constans/api';
+
 import style from './header.module.css';
 
 const Header = () => {
   const links = [
-    { path: '/', name: 'Movies' },
-    { path: '/TvPage', name: 'Tv-episodes' },
-  ]
+    { path: `/movies${PAGE}1`, name: 'Movies' },
+    { path: '/tv-episodes', name: 'Tv-episodes' },
+  ];
 
   return (
     <header className={style.header}>
@@ -17,7 +19,7 @@ const Header = () => {
               <li key={name}>
                 <NavLink 
                   className={style.link} 
-                  to={path} 
+                  to={path}
                 >
                   {name}
                 </NavLink>
