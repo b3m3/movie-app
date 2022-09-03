@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import CardsList from '../cardsList/CardsList';
 import { getApiResource } from '../../service/getApiResource';
@@ -11,13 +10,8 @@ const Category = ({ title, url }) => {
   const [listData, setListData] = useState([]);
   const [errorApi, setErrorApi] = useState(false);
 
-  const location = useLocation();
-  const locationPage = parseInt(location.pathname.replace(/[^\d]/g, ''));
-  
   const getResults = async () => {
-    const res = await getApiResource(`${url}${location}`);
-
-    console.log(res);
+    const res = await getApiResource(url);
 
     if(res) {
       const movieList = res.results.map(({ id, poster_path, release_date, title, name, vote_average }) => {
@@ -34,26 +28,20 @@ const Category = ({ title, url }) => {
 
   useEffect(() => {
     getResults();
-  }, [locationPage]);
+  }, []);
 
   return (
     <div className="category">
       <div className="container">
         <div className={style.body}>
-
           <div className={style.top}>
-            <h2>{title}</h2>
-
-            <nav>
-
-            </nav>
+              <h2>{title}</h2>
           </div>
-
-          {!errorApi 
-            ? <CardsList 
-              listData={listData}
-            /> 
-            : <Error />}
+          { 
+            !errorApi 
+            ? <CardsList listData={listData} /> 
+            : <Error />
+          }
         </div>
       </div>
     </div>

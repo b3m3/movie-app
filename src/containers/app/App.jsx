@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from '../../components/header/Header';
-import MoviesPage from '../moviesPage/MoviesPage';
-import TvPage from '../tvPage/TvPage';
-import InfoPage from '../infoPage/InfoPage';
-import NotFoundPage from '../notFoundPage/NotFoundPage';
+import Movies from '../movies/Movies';
+import Series from '../series/Series';
+// import Info from '../info/Info';
+import NotFound from '../notFound/NotFound';
 
 import { PAGE } from '../../constans/api';
 
@@ -18,11 +18,12 @@ const App = () => {
         <Header />
         <main>
           <Routes>
-            <Route path={`/${PAGE}1`} element={<MoviesPage />}></Route>
-            <Route path={`/movies${PAGE}1`} element={<MoviesPage />}></Route>
-            <Route path="/tv-episodes" element={<TvPage />}></Route>
-            {/* <Route path="/movies/:id" element={<InfoPage />}></Route> */}
-            <Route path="*" element={<NotFoundPage />}></Route>
+            <Route path='/' element={<Movies />}></Route>
+            <Route path='/movies' element={<Movies />}></Route>
+            <Route path='/series' element={<Series />}></Route>
+            <Route path='*' element={<NotFound />}></Route>
+
+            {/* <Route path="/movies/:id" element={<Info />}></Route> */}
           </Routes>
         </main>
       </BrowserRouter>

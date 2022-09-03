@@ -1,10 +1,10 @@
 import { useLocation } from 'react-router-dom';
 
-import NotFound from './img/error.png';
+import NotFoundImage from './img/error.png';
 
-import style from './not-found-page.module.css';
+import style from './not-found.module.css';
 
-const NotFoundPage = () => {
+const NotFound = () => {
   const location = useLocation();
 
   return (
@@ -13,7 +13,7 @@ const NotFoundPage = () => {
         <div className={style.main}>
           <img 
             className={style.image}
-            src={NotFound} 
+            src={NotFoundImage} 
             alt="Not found"
           />
 
@@ -24,4 +24,4 @@ const NotFoundPage = () => {
   );
 }
 
-export default NotFoundPage;
+export default NotFound;

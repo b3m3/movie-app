@@ -2,19 +2,19 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 
-import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, MOVIES, TV, LANG } from '../../constans/api';
+import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, MOVIES, LANG } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { BiArrowBack } from 'react-icons/bi';
 
-import style from './info-page.module.css';
+import style from './info.module.css';
 
-const InfoPage = () => {
+const Info = () => {
   const [infoCard, setInfoCard] = useState([]);
   const [genresCard, setGenresCard] = useState([]);
   const {id} = useParams();
-
+  
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     (async () => {
       const res = await getApiResource(`${MOVIEDB_ROOT}${MOVIES}${id}${MOVIEDB_API}${LANG}ru`);
@@ -94,4 +94,4 @@ const InfoPage = () => {
   );
 }
 
-export default InfoPage;
+export default Info;
