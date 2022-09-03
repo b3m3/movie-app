@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from '../../components/header/Header';
+import Home from '../home/Home';
 import Movies from '../movies/Movies';
 import Series from '../series/Series';
 // import Info from '../info/Info';
@@ -18,7 +19,7 @@ const App = () => {
         <Header />
         <main>
           <Routes>
-            <Route path='/' element={<Movies />}></Route>
+            <Route path='/' element={<Home />}></Route>
             <Route path='/movies' element={<Movies />}></Route>
             <Route path='/series' element={<Series />}></Route>
             <Route path='*' element={<NotFound />}></Route>

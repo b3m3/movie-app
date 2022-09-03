@@ -2,7 +2,7 @@ export const MOVIEDB_ROOT = 'https://api.themoviedb.org/3/';
 export const MOVIEDB_API = `?api_key=${process.env.REACT_APP_API_KEY}`;
 
 export const MOVIES = 'movie/';
-export const TV = 'tv/';
+export const SERIES = 'tv/';
 
 // categoryes
 const LATEST = 'latest';
@@ -23,7 +23,7 @@ export const MOVIES_POPULAR = MOVIEDB_ROOT+MOVIES+POPULAR+MOVIEDB_API+`${LANG}ru
 export const MOVIES_TOP_RATED = MOVIEDB_ROOT+MOVIES+TOP_RATED+MOVIEDB_API+`${LANG}ru${PAGE}`;
 export const MOVIES_NOW_PLAYING = MOVIEDB_ROOT+MOVIES+NOW_PLAYING+MOVIEDB_API+`${LANG}ru${PAGE}`;
 
-// tv
-export const TV_POPULAR = MOVIEDB_ROOT+TV+POPULAR+MOVIEDB_API+`${LANG}ru${PAGE}`;
-export const TV_TOP_RATED = MOVIEDB_ROOT+TV+TOP_RATED+MOVIEDB_API+`${LANG}ru${PAGE}`;
-export const TV_ON_THE_AIR = MOVIEDB_ROOT+TV+ON_THE_AIR+MOVIEDB_API+`${LANG}ru${PAGE}`;
+// SERIES
+export const TV_POPULAR = MOVIEDB_ROOT+SERIES+POPULAR+MOVIEDB_API+`${LANG}ru${PAGE}`;
+export const TV_TOP_RATED = MOVIEDB_ROOT+SERIES+TOP_RATED+MOVIEDB_API+`${LANG}ru${PAGE}`;
+export const TV_ON_THE_AIR = MOVIEDB_ROOT+SERIES+ON_THE_AIR+MOVIEDB_API+`${LANG}ru${PAGE}`;

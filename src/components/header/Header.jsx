@@ -1,7 +1,5 @@
 import { NavLink } from 'react-router-dom';
 
-import { PAGE } from '../../constans/api';
-
 import style from './header.module.css';
 
 const Header = () => {
