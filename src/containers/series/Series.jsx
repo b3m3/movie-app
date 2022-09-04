@@ -1,6 +1,5 @@
-import Category from '../../components/category/Category';
-
 import { TV_POPULAR, TV_TOP_RATED, TV_ON_THE_AIR } from '../../constans/api';
+import Title from '../../components/title/Title';
 
 const Series = () => {
   const tv = [
@@ -10,13 +9,9 @@ const Series = () => {
 
   return (
     <section className="tv-page">
-      {tv.map(({ title, url }) => (
-        <Category 
-          key={title}
-          title={title}
-          url={url}
-        />
-      ))}
+      <div className="container">
+        <Title title={'series...'} />
+      </div>
     </section>
   );
 }

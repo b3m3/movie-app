@@ -4,10 +4,11 @@ import Header from '../../components/header/Header';
 import Home from '../home/Home';
 import Movies from '../movies/Movies';
 import Series from '../series/Series';
-// import Info from '../info/Info';
+import Category from '../category/Category';
+import Info from '../info/Info';
 import NotFound from '../notFound/NotFound';
 
-import { PAGE } from '../../constans/api';
+import { PAGE_ROOT } from '../../constans/api';
 
 import './app.css';
 
@@ -22,9 +23,10 @@ const App = () => {
             <Route path='/' element={<Home />}></Route>
             <Route path='/movies' element={<Movies />}></Route>
             <Route path='/series' element={<Series />}></Route>
+            <Route path={`/movies/category${PAGE_ROOT}:id`} element={<Category />}></Route>
             <Route path='*' element={<NotFound />}></Route>
 
-            {/* <Route path="/movies/:id" element={<Info />}></Route> */}
+            <Route path="/movies/:id" element={<Info />}></Route>
           </Routes>
         </main>
       </BrowserRouter>

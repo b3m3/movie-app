@@ -22,7 +22,7 @@
 }
 
 .card:hover .poster {
-  box-shadow: 0 0 24px 0 #fff;
+  box-shadow: 0 0 18px 0 #fff;
 }
 
 .card:hover .poster img {
@@ -43,5 +43,19 @@
 .list p {
   position: relative;
   display: inline;
+  color: #fff;
+}
+
+/* swiper  */
+
+.swiper {
+  padding: 20px;
+}
+
+.slide {
+  width: 236px;
+}
+
+.slide p {
   color: #fff;
 }

@@ -1,4 +1,4 @@
-import Category from '../../components/category/Category';
+import Gallery from '../../components/gallery/Gallery';
 
 import { MOVIES_POPULAR, MOVIES_TOP_RATED, MOVIES_NOW_PLAYING } from '../../constans/api';
 
@@ -10,9 +10,9 @@ const Movies = () => {
   ];
   
   return (
-    <section className="movies-page">
+    <section className="movies">
       {movies.map(({ title, url }) => (
-        <Category 
+        <Gallery 
           key={title}
           title={title}
           url={url}
