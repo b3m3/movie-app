@@ -8,3 +8,8 @@
 .navigation a {
   text-decoration: none;
 }
+
+.ban {
+  opacity: .3;
+  pointer-events: none;
+}

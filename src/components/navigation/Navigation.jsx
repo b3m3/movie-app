@@ -10,21 +10,25 @@ const Navigation = ({ idPage, currentPage }) => {
     <div className={style.navigation}>
       <Link
         to={`/movies/category${PAGE_ROOT}${+idPage - 1}`}
+        className={idPage && idPage <= 1 ? style.ban : null}
       >
         <Button 
           name="Prev"
           onClick={() => currentPage && currentPage + 1}
           side={true}
+          idPage={idPage}
         />
       </Link>
 
       <Link 
         to={`/movies/category${PAGE_ROOT}${+idPage + 1}`}
+        className={idPage && idPage >= 100 ? style.ban : null}
       >
         <Button 
           name="Next"
           onClick={() => currentPage && currentPage - 1}
           side={false}
+          idPage={idPage}
         />
       </Link>
     </div>

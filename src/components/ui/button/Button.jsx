@@ -4,6 +4,7 @@ import { TbArrowNarrowRight } from 'react-icons/tb';
 import style from './button.module.css';
 
 const Button = ({ name, onClick, side }) => {
+
   return (
     <>
       <button 

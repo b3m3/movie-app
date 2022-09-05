@@ -59,3 +59,26 @@
 .slide p {
   color: #fff;
 }
+
+.arrows div:first-child {
+  left: 0;
+}
+
+.arrows div:last-child {
+  right: 0;
+}
+
+.arrow {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  top: 45%;
+  transform: translateY(-50%);
+  transition: .3s;
+}
+
+.arrow span {
+  font-size: 46px;
+  color: rgba(255, 255, 255, 0.85);
+}

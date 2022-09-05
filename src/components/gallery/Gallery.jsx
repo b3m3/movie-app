@@ -32,7 +32,9 @@ const Gallery = ({ title, url }) => {
           title={title} 
         />
         {!errorApi 
-          ? <CardsSlider resultsArray={resultsArray} /> 
+          ? <>
+              <CardsSlider resultsArray={resultsArray} />
+            </>
           : <Error />}
       </div>
     </div>

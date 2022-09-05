@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 import { POSTER_S } from '../../constans/api';
 import NoImage from './img/no-image.jpg';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
+import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 import 'swiper/css';
+import 'swiper/css/navigation';
 import style from './cards.module.css';
 
 export const Cards = ({ resultsArray }) => {
@@ -34,12 +39,20 @@ export const Cards = ({ resultsArray }) => {
 }
 
 export const CardsSlider = ({ resultsArray }) => {
+  const prev = useRef(null);
+  const next = useRef(null);
+
   return (
     <div className={style.slider} >
       <Swiper
+        modules={[Navigation]}
         className={style.swiper}
         spaceBetween={20}
         slidesPerView={'auto'}
+        navigation={{
+          nextEl: next.current,
+          prevEl: prev.current
+        }}
       >
         {resultsArray && resultsArray.map(({ id, poster_path, title, name }) => (
           <SwiperSlide
@@ -61,7 +74,16 @@ export const CardsSlider = ({ resultsArray }) => {
             </Link>
           </SwiperSlide>
         ))}
+        <div className={style.arrows}>
+          <div className={style.arrow} ref={prev}>
+            <span><BsFillArrowLeftCircleFill /></span>
+          </div>
+          <div className={style.arrow} ref={next}>
+            <span><BsFillArrowRightCircleFill /></span>
+          </div>
+        </div>
       </Swiper>
+
     </div>
   );
 }
