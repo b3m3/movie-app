@@ -1,29 +1,33 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 import { Cards } from '../../components/cards/Cards';
 import Title from '../../components/title/Title';
+import Navigation from '../../components/navigation/Navigation';
 
 import { MOVIES_POPULAR, MOVIES_TOP_RATED, PAGE_ROOT } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 
-import style from './category.module.css';
-
 const Category = ({ title }) => {
   const [resultsArray, setResultsArray] = useState(null);
+  const [totalPages, setTotalPages] = useState(null)
+  const [currentPage, setCurrentPage] = useState(null);
 
   const location = useLocation();
-  const locationPage = parseInt(location.pathname.match(/\d+/));
+  const idPage = parseInt(location.pathname.match(/\d+/));
 
   const getResults = async (url) => {
     const res = await getApiResource(url);
     setResultsArray(res.results);
+    setTotalPages(res.total_pages);
   };
 
   useEffect(() => {
-    getResults(MOVIES_POPULAR+PAGE_ROOT+locationPage);
-  }, [locationPage]);
+    setCurrentPage(+idPage)
+    getResults(MOVIES_POPULAR+PAGE_ROOT+idPage);
+  }, [idPage]);
+
+  console.log(totalPages);
 
   return (
     <div className="category">
@@ -34,15 +38,10 @@ const Category = ({ title }) => {
         <Cards 
           resultsArray={resultsArray}
         />
-
-        <div>
-          <Link to={`/movies/category${PAGE_ROOT}${''}`}>
-            <button className={style.btn} onClick={() => null}>-</button>
-          </Link>
-          <Link to={`/movies/category${PAGE_ROOT}${''}`}>
-            <button className={style.btn} onClick={() => null}>+</button>
-          </Link>
-        </div>
+        <Navigation
+          currentPage={currentPage}
+          idPage={idPage}
+        />
       </div>
     </div>
   );

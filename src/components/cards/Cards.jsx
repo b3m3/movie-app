@@ -25,12 +25,6 @@ export const Cards = ({ resultsArray }) => {
             <p>
               {title && title}
               {name && name}
-              {/* {title && title.length > 27 
-                ? title.slice(0, 27) + '...' 
-                : title}
-              {name && name.length > 27 
-                ? name.slice(0, 27) + '...' 
-                : name} */}
             </p> 
           </Link>
         </li>
@@ -61,12 +55,8 @@ export const CardsSlider = ({ resultsArray }) => {
               </div>
 
               <p>
-                {title && title.length > 27 
-                  ? title.slice(0, 27) + '...' 
-                  : title}
-                {name && name.length > 27 
-                  ? name.slice(0, 27) + '...' 
-                  : name}
+                {title && title}
+                {name && name}
               </p> 
             </Link>
           </SwiperSlide>

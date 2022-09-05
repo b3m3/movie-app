@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 
+import Button from '../../components/ui/button/Button';
 import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, MOVIES, LANG } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
-import { BiArrowBack } from 'react-icons/bi';
 
 import style from './info.module.css';
 
@@ -34,14 +34,11 @@ const Info = () => {
     <div className="info-page">
       <div className="container">
         <div className={style.main}>
-
-          <button
-            className={style.button}
+          <Button
+            name="Back"
             onClick={() => navigate(-1)}
-          >
-            <span><BiArrowBack /></span>
-            <span>Back</span>
-          </button>
+            side={true}
+          />
 
           {infoCard && infoCard.map((
             { backdrop_path, overview, poster_path, production_countries, 

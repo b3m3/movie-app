@@ -86,29 +86,6 @@
   line-height: 1.6;
 }
 
-.button {
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  display: flex;
-  gap: .9375rem;
-  font-size: 1.375rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.button:hover span:first-child {
-  transform: translateX(-5px);
-}
-
-.button span:first-child {
-  transition: .2s;
-}
-
-.button span:last-child {
-  font-size: 20px;
-}
-
 .rating {
   width: 2.1875rem;
   height: 2.1875rem;
