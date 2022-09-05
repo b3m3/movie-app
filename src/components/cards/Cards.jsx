@@ -24,7 +24,7 @@ export const Cards = ({ resultsArray }) => {
             className={style.card}
           >
             <div className={style.poster}>
-              <img src={POSTER_S && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
+              <img src={POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
             </div>
 
             <p>

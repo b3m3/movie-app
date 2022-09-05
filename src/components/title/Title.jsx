@@ -1,9 +1,13 @@
+import { PAGE_ROOT } from '../../constans/api';
+
 import style from './title.module.css';
 
 const Title = ({ title }) => {
   return (
     <div className={style.wrapp}>
-      <h2>{title}</h2>
+      <h2 className={style.title}>
+        {title}
+      </h2>
     </div>
   );
 }

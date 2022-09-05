@@ -5,11 +5,11 @@ export const MOVIES = 'movie/';
 export const SERIES = 'tv/';
 
 // categoryes
-const LATEST = 'latest';
-const POPULAR = 'popular';
-const TOP_RATED = 'top_rated';
-const NOW_PLAYING = 'now_playing';
-const ON_THE_AIR = 'on_the_air';
+export const LATEST = 'latest';
+export const POPULAR = 'popular';
+export const TOP_RATED = 'top_rated';
+export const NOW_PLAYING = 'now_playing';
+export const ON_THE_AIR = 'on_the_air';
 
 export const LANG = '&language=';
 export const PAGE_ROOT = '&page=';

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
+import { PAGE_ROOT } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { CardsSlider } from '../cards/Cards';
 import Title from '../../components/title/Title';
@@ -12,12 +14,10 @@ const Gallery = ({ title, url }) => {
   const getResults = async () => {
     const res = await getApiResource(url);
 
-    if(res) {
+    if (res) {
       setResultsArray(res.results);
-      return true;
     } else {
       setErrorApi(true);
-      return false;
     }
   };
 
@@ -28,13 +28,19 @@ const Gallery = ({ title, url }) => {
   return (
     <div className="category">
       <div className="container">
-        <Title 
-          title={title} 
-        />
+        <Link 
+          to={`/movies/${
+            title === 'Popular' ? 'popular' 
+            : title === 'Now playing' ? 'now_playing'
+            : title === 'Top rated' ? 'top_rated' : ''
+          }${PAGE_ROOT}1`}
+        >
+          <Title 
+            title={title}
+          />
+        </Link>
         {!errorApi 
-          ? <>
-              <CardsSlider resultsArray={resultsArray} />
-            </>
+          ? <CardsSlider resultsArray={resultsArray} />
           : <Error />}
       </div>
     </div>
