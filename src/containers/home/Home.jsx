@@ -1,6 +1,6 @@
 import Title from '../../components/title/Title';
 
-import style from './home.module.css';
+// import style from './home.module.css';
 
 const Home = () => {
   return (

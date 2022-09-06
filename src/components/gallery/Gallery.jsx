@@ -8,36 +8,31 @@ import Error from '../error';
 import { PAGE_ROOT } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
+import { changeStrToUrl } from '../../utils/utils';
 
 const Gallery = ({ title, url }) => {
   const [resultsArray, setResultsArray] = useState([]);
   const [errorApi, setErrorApi] = useState(false);
   const pathTv = useQueryParams().pathTv;
 
-  const getResults = async () => {
-    const res = await getApiResource(url);
-
-    if (res) {
-      setResultsArray(res.results);
-    } else {
-      setErrorApi(true);
-    }
-  };
-
   useEffect(() => {
-    getResults();
-  }, []);
+    (async () => {
+      const res = await getApiResource(url);
+
+      if (res) {
+        setResultsArray(res.results);
+      } else {
+        setErrorApi(true);
+      }
+    })();
+  }, [url]);
+
 
   return (
     <div className="category">
       <div className="container">
         <Link 
-          to={`/${pathTv}${
-            title === 'Popular' ? 'popular' 
-            : title === 'Now playing' ? 'now_playing'
-            : title === 'Top rated' ? 'top_rated' 
-            : title === 'On the air' ? 'on_the_air' : ''
-          }${PAGE_ROOT}1`}
+          to={`/${pathTv}${changeStrToUrl(title)}${PAGE_ROOT}1`}
         >
           <Title 
             title={title}
