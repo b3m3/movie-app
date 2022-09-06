@@ -1,17 +1,21 @@
-import { TV_POPULAR, TV_TOP_RATED, TV_ON_THE_AIR } from '../../constans/api';
-import Title from '../../components/title/Title';
+import Gallery from '../../components/gallery/Gallery';
+
+import { SERIES_POPULAR, SERIES_TOP_RATED, SERIES_ON_THE_AIR } from '../../constans/api';
 
 const Series = () => {
-  const tv = [
-    {title: 'Popular', url: TV_POPULAR},
-    {title: 'On the air', url: TV_ON_THE_AIR},
-    {title: 'Top rated', url: TV_TOP_RATED}];
+  const series = [
+    {title: 'Popular', url: SERIES_POPULAR},
+    {title: 'On the air', url: SERIES_ON_THE_AIR},
+    {title: 'Top rated', url: SERIES_TOP_RATED}];
 
   return (
-    <section className="tv-page">
-      <div className="container">
-        <Title title={'series...'} />
-      </div>
+    <section className="series">
+      {series.map(({ title, url }) => (
+        <Gallery 
+          key={title}
+          title={title}
+          url={url}
+        />))}
     </section>
   );
 }

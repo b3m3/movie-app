@@ -6,8 +6,7 @@ const Movies = () => {
   const movies = [
     {title: 'Popular', url: MOVIES_POPULAR},
     {title: 'Now playing', url: MOVIES_NOW_PLAYING},
-    {title: 'Top rated', url: MOVIES_TOP_RATED}
-  ];
+    {title: 'Top rated', url: MOVIES_TOP_RATED}];
   
   return (
     <section className="movies">
@@ -16,8 +15,7 @@ const Movies = () => {
           key={title}
           title={title}
           url={url}
-        />
-      ))}
+        />))}
     </section>
   );
 }

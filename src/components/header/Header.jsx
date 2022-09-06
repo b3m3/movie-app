@@ -5,8 +5,8 @@ import style from './header.module.css';
 const Header = () => {
   const links = [
     { path: `/`, name: 'Home' },
-    { path: `/movies`, name: 'Movies' },
-    { path: '/series', name: 'Series' },
+    { path: `/movie`, name: 'Movies' },
+    { path: '/tv', name: 'Series' },
   ];
 
   return (

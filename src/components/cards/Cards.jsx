@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 import { POSTER_S } from '../../constans/api';
+import { useQueryParams } from '../../hooks/useQueryParams';
+
 import NoImage from './img/no-image.jpg';
 import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
@@ -13,6 +15,8 @@ import 'swiper/css/navigation';
 import style from './cards.module.css';
 
 export const Cards = ({ resultsArray }) => {
+  const pathTv = useQueryParams().pathTv;
+
   return (
     <ul className={style.list}>
       {resultsArray && resultsArray.map(({ id, poster_path, title, name }) => (
@@ -20,7 +24,7 @@ export const Cards = ({ resultsArray }) => {
           key={id}
         >
           <Link 
-            to={`/movies/${id}`}
+            to={`/${pathTv}${id}`}
             className={style.card}
           >
             <div className={style.poster}>
@@ -41,6 +45,7 @@ export const Cards = ({ resultsArray }) => {
 export const CardsSlider = ({ resultsArray }) => {
   const prev = useRef(null);
   const next = useRef(null);
+  const pathTv = useQueryParams().pathTv;
 
   return (
     <div className={style.slider} >
@@ -61,7 +66,7 @@ export const CardsSlider = ({ resultsArray }) => {
           >
             <Link
               className={style.card}
-              to={`/movies/${id}`}
+              to={`/${pathTv}${id}`}
             >
               <div className={style.poster}>
                 <img src={POSTER_S && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
@@ -83,7 +88,6 @@ export const CardsSlider = ({ resultsArray }) => {
           </div>
         </div>
       </Swiper>
-
     </div>
   );
 }

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { Cards } from '../../components/cards/Cards';
 import Title from '../../components/title/Title';
 import Navigation from '../../components/navigation/Navigation';
 import Error from '../../components/error/Error';
+
 import { MOVIEDB_ROOT, MOVIEDB_API, PAGE_ROOT, MOVIES, LANG, RU} from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
+import { useQueryParams } from '../../hooks/useQueryParams';
 
 const Category = () => {
   const [resultsArray, setResultsArray] = useState(null);
@@ -15,8 +17,8 @@ const Category = () => {
   const [apiError, setApiError] = useState(false);
 
   const { category } = useParams();
-  const location = useLocation();
-  const idPage = parseInt(location.pathname.match(/\d+/));
+  const idPage = useQueryParams().idPage;
+  const pathTv = useQueryParams().pathTv;
 
   const getResults = async (url) => {
     const res = await getApiResource(url);
@@ -31,7 +33,7 @@ const Category = () => {
 
   useEffect(() => {
     setCurrentPage(+idPage);
-    getResults(MOVIEDB_ROOT+MOVIES+category+MOVIEDB_API+LANG+RU+PAGE_ROOT+idPage);
+    getResults(MOVIEDB_ROOT+pathTv+category+MOVIEDB_API+LANG+RU+PAGE_ROOT+idPage);
   }, [idPage]);
 
   return (

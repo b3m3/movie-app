@@ -1,34 +1,28 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import Button from '../../components/ui/button/Button';
-import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, MOVIES, LANG } from '../../constans/api';
+import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 
 import style from './info.module.css';
 
 const Info = () => {
-  const [infoCard, setInfoCard] = useState([]);
-  const [genresCard, setGenresCard] = useState([]);
-  const {id} = useParams();
-  
-  const navigate = useNavigate();
+  const [infoCard, setInfoCard] = useState(null);
+  const [ganres, setGanres] = useState(null);
+  const { id, tv } = useParams();
+  const back = useNavigate();
   
   useEffect(() => {
     (async () => {
-      const res = await getApiResource(`${MOVIEDB_ROOT}${MOVIES}${id}${MOVIEDB_API}${LANG}ru`);
-      const { 
-        backdrop_path, genres, overview, poster_path, 
-        release_date, title, vote_average, runtime, production_countries
-      } = await res;
+      const res = await getApiResource(`${MOVIEDB_ROOT}${tv}/${id}${MOVIEDB_API}${LANG}${RU}`);
 
-      setInfoCard(info => 
-        [{ backdrop_path, overview, poster_path, release_date, 
-          title, vote_average, runtime, production_countries }]);
-      setGenresCard(gen => [{ genres }]);
+      setInfoCard(res);
+      setGanres(res.genres);
     })();
-  }, []);
+  }, [id, tv]);
+
+  console.log(infoCard);
 
   return (
     <div className="info-page">
@@ -36,55 +30,68 @@ const Info = () => {
         <div className={style.main}>
           <Button
             name="Back"
-            onClick={() => navigate(-1)}
+            onClick={() => back(-1)}
             side={true}
           />
-
-          {infoCard && infoCard.map((
-            { backdrop_path, overview, poster_path, production_countries, 
-              release_date, title, vote_average, runtime}) => (
-
+          
+          {infoCard &&
             <div key={id} className={style.body}>
-              <img
+              <img 
                 className={style.backdrop}
-                src={POSTER_B+backdrop_path}
-                alt="backdrop_path" 
+                src={infoCard.backdrop_path 
+                  ? POSTER_B+infoCard.backdrop_path 
+                  : POSTER_B+infoCard.poster_path}
+                alt="backdrop_path"
               />
 
               <div className={style.image}>
-                <img src={POSTER_S+poster_path} alt={title} />
-              </div>
+                <img src={infoCard.poster_path && POSTER_S+infoCard.poster_path} alt={infoCard.title} />
+              </div> 
 
               <div className={style.info}>
-                <h2>{title && title}</h2>
+                <h2>{infoCard.title && infoCard.title}</h2>
 
                 <div className={style.row}>
                   <span>
-                    {release_date && release_date.split('-').reverse().join('.')}
+                    {infoCard.release_date 
+                      ? infoCard.release_date.split('-').reverse().join('.')
+                      : infoCard.first_air_date.split('-').reverse().join('.')}
                   </span>
-                  <span>{runtime && runtime + ' min'}</span>
+                  <span>
+                    {infoCard.runtime 
+                      ? infoCard.runtime + ' min'
+                      : infoCard.episode_run_time[0] + ' min'}
+                  </span>
                   <span className={style.rating}>
-                    {vote_average && (vote_average).toFixed(1)}
+                    {infoCard.vote_average && (infoCard.vote_average).toFixed(1)}
                   </span>
                 </div>
 
+                {infoCard.number_of_seasons && 
+                  <div className={style.row}>
+                    <p className={style.seasons}>
+                      Number of seasons: <span>{infoCard.number_of_seasons}</span>
+                    </p>
+                  </div>}
+
                 <ul className={style.country}>
-                  {production_countries && production_countries.map(({name}) => (
+                  {infoCard.production_countries.map(({name}) => (
                     <li key={name}>{name}</li>
                   ))}
                 </ul>
 
-                <ul className={style.genres}>
-                  {genresCard && genresCard.map(pite => 
-                    pite.genres.map(({name}) => (
-                    <li key={name}>{name}</li>
-                  )))}
+                <ul className={style.genre}>
+                  {ganres && ganres.map(item => (
+                    <li key={item.name}>{item.name}</li>
+                  ))}
                 </ul>
 
-                <p className={style.overview}>{overview ? overview : 'Not overview...'}</p>
+                <p className={style.overview}>
+                  {infoCard.overview ? infoCard.overview : 'Not overview...'}
+                </p>
               </div>
             </div>
-          ))}
+          }
         </div>
       </div>
     </div>
