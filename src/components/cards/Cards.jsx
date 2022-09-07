@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
+import Rating from '../rating/Rating';
 import { POSTER_S } from '../../constans/api';
 import { useQueryParams } from '../../hooks/useQueryParams';
 
@@ -27,14 +28,9 @@ export const Cards = ({ resultsArray }) => {
             to={`/${pathTv}${id}`}
             className={style.card}
           >
-            <span 
-              className={`${style.rating} 
-              ${vote_average >= 8 ? style.rating_8 
-                : vote_average >= 7 ? style.rating_7
-                : vote_average >= 6 ? style.rating_6
-                : vote_average < 6 ? style.rating_5 : null}`}
-            >
-              {vote_average && vote_average}
+
+            <span className={style.rating}>
+              <Rating data={vote_average} />
             </span>
 
             <div className={style.poster}>
@@ -79,14 +75,8 @@ export const CardsSlider = ({ resultsArray }) => {
               to={`/${pathTv}${id}`}
             >
 
-              <span 
-                className={`${style.rating} 
-                ${vote_average >= 8 ? style.rating_8 
-                  : vote_average >= 7 ? style.rating_7
-                  : vote_average >= 6 ? style.rating_6
-                  : vote_average < 6 ? style.rating_5 : null}`}
-              >
-                {vote_average && vote_average}
+              <span className={style.rating}>
+                <Rating data={vote_average} />
               </span>
 
               <div className={style.poster}>

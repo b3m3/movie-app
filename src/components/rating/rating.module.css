@@ -1,0 +1,30 @@
+.rating {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating_8 {
+  color: #000;
+  background-color: rgba(60, 255, 0, 0.75);
+}
+
+.rating_7 {
+  color: #000;
+  background-color: rgba(229, 255, 0, 0.75);
+}
+
+.rating_6 {
+  color: #000;
+  background-color: rgba(255, 166, 0, 0.75);
+}
+
+.rating_5 {
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.75);
+}

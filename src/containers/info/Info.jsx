@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import Button from '../../components/ui/button/Button';
+import Rating from '../../components/rating/Rating';
 import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import Error from '../../components/error/Error';
@@ -22,7 +23,6 @@ const Info = () => {
       if (res) {
         setInfoCard(res);
         setGanres(res.genres);
-        console.log(res);
       } else {
         setErrorApi(true);
       }
@@ -69,9 +69,7 @@ const Info = () => {
                         ? infoCard.runtime + ' min'
                         : infoCard.episode_run_time[0] + ' min'}
                     </span>
-                    <span className={style.rating}>
-                      {infoCard.vote_average && (infoCard.vote_average).toFixed(1)}
-                    </span>
+                    <Rating data={infoCard.vote_average} />
                   </div>
 
                   <div className={style.row}>
