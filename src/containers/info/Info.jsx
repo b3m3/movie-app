@@ -22,6 +22,7 @@ const Info = () => {
       if (res) {
         setInfoCard(res);
         setGanres(res.genres);
+        console.log(res);
       } else {
         setErrorApi(true);
       }
@@ -55,7 +56,7 @@ const Info = () => {
                 </div> 
 
                 <div className={style.info}>
-                  <h2>{infoCard.title && infoCard.title}</h2>
+                  <h2>{infoCard.title ? infoCard.title : infoCard.name}</h2>
 
                   <div className={style.row}>
                     <span>
@@ -73,12 +74,15 @@ const Info = () => {
                     </span>
                   </div>
 
-                  {infoCard.number_of_seasons && 
-                    <div className={style.row}>
+                  <div className={style.row}>
+                    {infoCard.number_of_seasons && 
                       <p className={style.seasons}>
                         Number of seasons: <span>{infoCard.number_of_seasons}</span>
-                      </p>
-                    </div>}
+                      </p>}
+                    {infoCard.status && 
+                      <p>{infoCard.status}</p>
+                    }
+                  </div>
 
                   <ul className={style.country}>
                     {infoCard.production_countries.map(({name}) => (

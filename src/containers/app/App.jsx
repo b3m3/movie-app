@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from '../../components/header/Header';
-
 import routesConfig from '../../routes/routesConfig';
 
 import './app.css';
@@ -13,8 +12,8 @@ const App = () => {
         <Header />
         <main>
           <Routes>
-            {routesConfig.map(({ path, element }) => (
-                <Route path={path} element={element}/>))}
+            {routesConfig.map(({ path, element }, i) => (
+                <Route key={i} path={path} element={element}/>))}
           </Routes>
         </main>
       </BrowserRouter>

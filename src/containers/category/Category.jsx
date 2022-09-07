@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Cards } from '../../components/cards/Cards';
@@ -21,6 +21,8 @@ const Category = () => {
   const idPage = useQueryParams().idPage;
   const pathTv = useQueryParams().pathTv;
 
+  const head = useRef(null)
+
   const getResults = async (url) => {
     const res = await getApiResource(url);
 
@@ -38,7 +40,7 @@ const Category = () => {
   }, [idPage]);
 
   return (
-    <div className="category">
+    <div className="category" ref={head}>
       <div className="container">
         {!apiError 
           ? <>
@@ -53,6 +55,7 @@ const Category = () => {
                 idPage={idPage}
                 totalPages={totalPages}
                 category={category}
+                // onClick={onClick}
               />
             </>
           : <Error />}
