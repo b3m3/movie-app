@@ -21,8 +21,6 @@ const Category = () => {
   const idPage = useQueryParams().idPage;
   const pathTv = useQueryParams().pathTv;
 
-  const head = useRef(null)
-
   const getResults = async (url) => {
     const res = await getApiResource(url);
 
@@ -37,10 +35,11 @@ const Category = () => {
   useEffect(() => {
     setCurrentPage(+idPage);
     getResults(MOVIEDB_ROOT+pathTv+category+MOVIEDB_API+LANG+RU+PAGE_ROOT+idPage);
+    window.scrollTo(0, 0);
   }, [idPage]);
 
   return (
-    <div className="category" ref={head}>
+    <div className="category">
       <div className="container">
         {!apiError 
           ? <>
@@ -55,7 +54,6 @@ const Category = () => {
                 idPage={idPage}
                 totalPages={totalPages}
                 category={category}
-                // onClick={onClick}
               />
             </>
           : <Error />}
