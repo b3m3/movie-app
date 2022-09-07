@@ -19,7 +19,7 @@ export const Cards = ({ resultsArray }) => {
 
   return (
     <ul className={style.list}>
-      {resultsArray && resultsArray.map(({ id, poster_path, title, name }) => (
+      {resultsArray && resultsArray.map(({ id, poster_path, title, name, vote_average }) => (
         <li
           key={id}
         >
@@ -27,6 +27,16 @@ export const Cards = ({ resultsArray }) => {
             to={`/${pathTv}${id}`}
             className={style.card}
           >
+            <span 
+              className={`${style.rating} 
+              ${vote_average >= 8 ? style.rating_8 
+                : vote_average >= 7 ? style.rating_7
+                : vote_average >= 6 ? style.rating_6
+                : vote_average < 6 ? style.rating_5 : null}`}
+            >
+              {vote_average && vote_average}
+            </span>
+
             <div className={style.poster}>
               <img src={POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
             </div>
@@ -59,7 +69,7 @@ export const CardsSlider = ({ resultsArray }) => {
           prevEl: prev.current
         }}
       >
-        {resultsArray && resultsArray.map(({ id, poster_path, title, name }) => (
+        {resultsArray && resultsArray.map(({ id, poster_path, title, name, vote_average }) => (
           <SwiperSlide
             key={id}
             className={style.slide}
@@ -68,6 +78,17 @@ export const CardsSlider = ({ resultsArray }) => {
               className={style.card}
               to={`/${pathTv}${id}`}
             >
+
+              <span 
+                className={`${style.rating} 
+                ${vote_average >= 8 ? style.rating_8 
+                  : vote_average >= 7 ? style.rating_7
+                  : vote_average >= 6 ? style.rating_6
+                  : vote_average < 6 ? style.rating_5 : null}`}
+              >
+                {vote_average && vote_average}
+              </span>
+
               <div className={style.poster}>
                 <img src={POSTER_S && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
               </div>
