@@ -5,7 +5,7 @@ import Category from '../containers/category/Category';
 import Info from '../containers/info/Info';
 import NotFound from '../containers/notFound/NotFound';
 
-import { PAGE_ROOT } from '../constans/api';
+import { PAGE_ROOT, SEARCH } from '../constans/api';
 
 const routesConfig = [
   {
@@ -23,6 +23,10 @@ const routesConfig = [
   {
     path: "/:tv/:id",
     element: <Info />
+  },
+  {
+    path: "/:tv/"+SEARCH+":name"+PAGE_ROOT+":id",
+    element: <Category />
   },
   {
     path: "/:tv/:category"+PAGE_ROOT+":id",

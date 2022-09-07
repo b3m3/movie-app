@@ -1,5 +1,3 @@
-import { PAGE_ROOT } from '../../constans/api';
-
 import style from './title.module.css';
 
 const Title = ({ title }) => {

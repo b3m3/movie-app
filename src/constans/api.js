@@ -3,6 +3,8 @@ export const MOVIEDB_API = `?api_key=${process.env.REACT_APP_API_KEY}`;
 
 export const MOVIES = 'movie/';
 export const SERIES = 'tv/';
+export const SEARCH = 'search/';
+// multi
 
 // categoryes
 export const LATEST = 'latest';
@@ -13,6 +15,7 @@ export const ON_THE_AIR = 'on_the_air';
 
 export const LANG = '&language=';
 export const PAGE_ROOT = '&page=';
+export const QUERY = '&query=';
 
 export const RU = 'ru';
 

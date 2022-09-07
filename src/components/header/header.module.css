@@ -8,7 +8,9 @@
   min-height: 3.75rem;
   display: flex;
   align-items: center;
-  
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 .list {
@@ -37,5 +39,12 @@
 @media screen and (max-width: 83.125rem) {
   .list a {
     font-size: calc(16px + calc(20 - 16) * ((100vw - 320px) / (1330 - 320)));
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .main {
+    flex-direction: column;
+    justify-content: center;
   }
 }

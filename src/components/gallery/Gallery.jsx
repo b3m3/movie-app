@@ -5,10 +5,12 @@ import { CardsSlider } from '../cards/Cards';
 import Title from '../../components/title/Title';
 import Error from '../error';
 
-import { PAGE_ROOT } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
-import { useQueryParams } from '../../hooks/useQueryParams';
+import { PAGE_ROOT } from '../../constans/api';
 import { changeStrToUrl } from '../../utils/utils';
+import { useQueryParams } from '../../hooks/useQueryParams';
+
+import style from './gallery.module.css';
 
 const Gallery = ({ title, url }) => {
   const [resultsArray, setResultsArray] = useState([]);
@@ -31,7 +33,8 @@ const Gallery = ({ title, url }) => {
   return (
     <div className="category">
       <div className="container">
-        <Link 
+        <Link
+          className={style.link}
           to={`/${pathTv}${changeStrToUrl(title)}${PAGE_ROOT}1`}
         >
           <Title 

@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
+import Input from '../ui/input/Input';
+
 import style from './header.module.css';
 
 const Header = () => {
@@ -25,6 +27,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
+          <Input />
         </div>
       </div>
     </header>

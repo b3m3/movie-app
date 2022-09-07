@@ -34,7 +34,7 @@ export const Cards = ({ resultsArray }) => {
             </span>
 
             <div className={style.poster}>
-              <img src={POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
+              <img src={poster_path ? POSTER_S+poster_path : NoImage} alt={title} />
             </div>
 
             <p>
@@ -80,7 +80,7 @@ export const CardsSlider = ({ resultsArray }) => {
               </span>
 
               <div className={style.poster}>
-                <img src={POSTER_S && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
+                <img src={poster_path && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
               </div>
 
               <p>

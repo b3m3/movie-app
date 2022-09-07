@@ -7,6 +7,8 @@ import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../c
 import { getApiResource } from '../../service/getApiResource';
 import Error from '../../components/error/Error';
 
+import NoImage from './img/no-image.jpg';
+
 import style from './info.module.css';
 
 const Info = () => {
@@ -42,17 +44,19 @@ const Info = () => {
             />
             
             {infoCard &&
-              <div key={id} className={style.body}>
+              <div key={id} className={style.body}>              
                 <img 
                   className={style.backdrop}
                   src={infoCard.backdrop_path 
                     ? POSTER_B+infoCard.backdrop_path 
-                    : POSTER_B+infoCard.poster_path}
-                  alt="backdrop_path"
+                    : infoCard.poster_path
+                    ? POSTER_B+infoCard.poster_path
+                    : null}
+                  alt={infoCard.title}
                 />
 
                 <div className={style.image}>
-                  <img src={infoCard.poster_path && POSTER_S+infoCard.poster_path} alt={infoCard.title} />
+                  <img src={infoCard.poster_path ? POSTER_S+infoCard.poster_path : NoImage} alt={infoCard.title} />
                 </div> 
 
                 <div className={style.info}>
