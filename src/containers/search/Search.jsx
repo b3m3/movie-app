@@ -27,7 +27,9 @@ const Search = () => {
     window.scrollTo(0, 0);
     
     (async () => {
-      const res = await getApiResource(MOVIEDB_ROOT+SEARCH+pathTv+MOVIEDB_API+LANG+RU+QUERY+name+PAGE_ROOT+idPage);
+      const res = await getApiResource(
+        MOVIEDB_ROOT+SEARCH+pathTv+MOVIEDB_API+LANG+RU+QUERY+name+PAGE_ROOT+idPage
+      );
 
       if (res) {
         setResultsArray(res.results);

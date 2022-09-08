@@ -26,7 +26,9 @@ const Category = () => {
     window.scrollTo(0, 0);
     
     (async () => {
-      const res = await getApiResource(MOVIEDB_ROOT+pathTv+category+MOVIEDB_API+LANG+RU+PAGE_ROOT+idPage);
+      const res = await getApiResource(
+        MOVIEDB_ROOT+pathTv+category+MOVIEDB_API+LANG+RU+PAGE_ROOT+idPage
+      );
 
       if (res) {
         setResultsArray(res.results);
