@@ -2,6 +2,7 @@ import Home from '../containers/home/Home';
 import Movies from '../containers/movies/Movies';
 import Series from '../containers/series/Series';
 import Category from '../containers/category/Category';
+import Search from '../containers/search/Search';
 import Info from '../containers/info/Info';
 import NotFound from '../containers/notFound/NotFound';
 
@@ -26,7 +27,7 @@ const routesConfig = [
   },
   {
     path: "/:tv/"+SEARCH+":name"+PAGE_ROOT+":id",
-    element: <Category />
+    element: <Search />
   },
   {
     path: "/:tv/:category"+PAGE_ROOT+":id",

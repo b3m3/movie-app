@@ -7,18 +7,16 @@ import { PAGE_ROOT, SEARCH } from '../../constans/api';
 
 import style from './navigation.module.css';
 
-const Navigation = ({ idPage, currentPage, category, totalPages }) => {
+const Navigation = ({ idPage, currentPage, totalPages }) => {
   const pathTv = useQueryParams().pathTv;
-  const {name} = useParams();
+  const {name, category } = useParams();
 
   return (
     <div className={style.navigation}>
       <Link
-        to={
-          name
+        to={name
           ? `/${pathTv}${SEARCH}${name}${PAGE_ROOT}${+idPage - 1}`  
-          : `/${pathTv}${category}${PAGE_ROOT}${+idPage - 1}`
-        }
+          : `/${pathTv}${category}${PAGE_ROOT}${+idPage - 1}`}
         className={idPage && idPage <= 1 ? style.ban : null}
       >
         <Button 
@@ -30,11 +28,9 @@ const Navigation = ({ idPage, currentPage, category, totalPages }) => {
       </Link>
 
       <Link 
-        to={
-          name
+        to={name
           ? `/${pathTv}${SEARCH}${name}${PAGE_ROOT}${+idPage + 1}`  
-          : `/${pathTv}${category}${PAGE_ROOT}${+idPage + 1}`
-        }
+          : `/${pathTv}${category}${PAGE_ROOT}${+idPage + 1}`}
         className={idPage && idPage >= totalPages ? style.ban : null}
       >
         <Button 

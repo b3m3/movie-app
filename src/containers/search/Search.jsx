@@ -6,18 +6,19 @@ import Title from '../../components/title/Title';
 import Navigation from '../../components/navigation/Navigation';
 import Error from '../../components/error/Error';
 
-import { MOVIEDB_ROOT, MOVIEDB_API, PAGE_ROOT, LANG, RU} from '../../constans/api';
+import { MOVIEDB_ROOT, SEARCH, QUERY, MOVIEDB_API, PAGE_ROOT, LANG, RU} from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { changeUrlToStr } from '../../utils/utils';
 
-const Category = () => {
+const Search = () => {
   const [resultsArray, setResultsArray] = useState(null);
   const [totalPages, setTotalPages] = useState(null)
   const [currentPage, setCurrentPage] = useState(null);
+  const [noResults, setNoResults] = useState(false);
   const [errorApi, setErrorApi] = useState(false);
 
-  const { category } = useParams();
+  const { name } = useParams();
   const idPage = useQueryParams().idPage;
   const pathTv = useQueryParams().pathTv;
 
@@ -26,25 +27,36 @@ const Category = () => {
     window.scrollTo(0, 0);
     
     (async () => {
-      const res = await getApiResource(MOVIEDB_ROOT+pathTv+category+MOVIEDB_API+LANG+RU+PAGE_ROOT+idPage);
+      const res = await getApiResource(MOVIEDB_ROOT+SEARCH+pathTv+MOVIEDB_API+LANG+RU+QUERY+name+PAGE_ROOT+idPage);
 
       if (res) {
         setResultsArray(res.results);
         setTotalPages(res.total_pages);
+        setErrorApi(false);
       } else {
-        setErrorApi(true)
+        setErrorApi(true);
+      }
+
+      if (res.results.length !== 0) {
+        setNoResults(false);
+      } else {
+        setNoResults(true);
       }
     })();
-  }, [idPage]);
+  }, [name, idPage]);
+
+  console.log(noResults);
 
   return (
     <div className="category">
       <div className="container">
         {errorApi 
           ? <Error />
+          : noResults
+          ? <Error noResults />
           : <>
               <Title 
-                title={category && changeUrlToStr(category)}
+                title={name && changeUrlToStr(name)}
               />
               <Cards 
                 resultsArray={resultsArray}
@@ -60,4 +72,4 @@ const Category = () => {
   );
 }
 
-export default Category;
+export default Search;
