@@ -47,8 +47,6 @@ const Search = () => {
     })();
   }, [name, idPage]);
 
-  console.log(noResults);
-
   return (
     <div className="category">
       <div className="container">

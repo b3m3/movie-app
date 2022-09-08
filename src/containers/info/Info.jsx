@@ -6,6 +6,7 @@ import Rating from '../../components/rating/Rating';
 import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import Error from '../../components/error/Error';
+import { reverseStr } from '../../utils/utils';
 
 import NoImage from './img/no-image.jpg';
 
@@ -56,22 +57,37 @@ const Info = () => {
                 />
 
                 <div className={style.image}>
-                  <img src={infoCard.poster_path ? POSTER_S+infoCard.poster_path : NoImage} alt={infoCard.title} />
+                  <img 
+                    src={infoCard.poster_path 
+                      ? POSTER_S+infoCard.poster_path 
+                      : NoImage} 
+                    alt={infoCard.title} 
+                  />
                 </div> 
 
                 <div className={style.info}>
-                  <h2>{infoCard.title ? infoCard.title : infoCard.name}</h2>
+                  <h2>
+                    {infoCard.title 
+                      ? infoCard.title 
+                      : infoCard.name
+                      ? infoCard.name
+                      : null}
+                  </h2>
 
                   <div className={style.row}>
                     <span>
                       {infoCard.release_date 
-                        ? infoCard.release_date.split('-').reverse().join('.')
-                        : infoCard.first_air_date.split('-').reverse().join('.')}
+                        ? reverseStr(infoCard.release_date)
+                        : infoCard.first_air_date
+                        ? reverseStr(infoCard.first_air_date)
+                        : null}
                     </span>
                     <span>
-                      {infoCard.runtime 
+                      {infoCard.runtime
                         ? infoCard.runtime + ' min'
-                        : infoCard.episode_run_time[0] + ' min'}
+                        : infoCard.episode_run_time
+                        ? infoCard.episode_run_time[0] + ' min'
+                        : null}
                     </span>
                     <Rating data={infoCard.vote_average} />
                   </div>
@@ -99,7 +115,7 @@ const Info = () => {
                   </ul>
 
                   <p className={style.overview}>
-                    {infoCard.overview ? infoCard.overview : 'Not overview...'}
+                    {infoCard.overview ? infoCard.overview : 'No overview !'}
                   </p>
                 </div>
               </div>}

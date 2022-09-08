@@ -9,7 +9,7 @@ const Rating = ({ data }) => {
         : data >= 6 ? style.rating_6
         : data < 6 ? style.rating_5 : null}`}
     >
-      { data && data.toFixed(1) }
+      { data && parseFloat(data) }
     </span>
   );
 }
