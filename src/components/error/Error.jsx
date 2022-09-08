@@ -1,11 +1,11 @@
 import style from './error.module.css';
 
-const Error = ({ noResults }) => {
+const Error = ({ noResults, name }) => {
   return (
       <div className={style.error}>
         {noResults 
           ? <p>
-              Nothing found for your request
+              No results found for "{name}"
             </p>
           : <p>
               An error has occurred. We cannot display data.<br />

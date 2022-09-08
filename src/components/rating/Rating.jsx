@@ -1,3 +1,5 @@
+import { roundNumber } from '../../utils/utils';
+
 import style from './rating.module.css';
 
 const Rating = ({ data }) => {
@@ -9,7 +11,7 @@ const Rating = ({ data }) => {
         : data >= 6 ? style.rating_6
         : data < 6 ? style.rating_5 : null}`}
     >
-      { data && parseFloat(data) }
+      { data && roundNumber(data) }
     </span>
   );
 }

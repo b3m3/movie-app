@@ -53,7 +53,7 @@ const Search = () => {
         {errorApi 
           ? <Error />
           : noResults
-          ? <Error noResults />
+          ? <Error noResults name={name} />
           : <>
               <Title 
                 title={name && changeUrlToStr(name)}
