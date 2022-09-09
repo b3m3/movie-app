@@ -1,14 +1,14 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 3.125rem;
+  gap: 1.875rem;
   align-items: flex-start;
-  padding-top: 3.125rem;
+  padding-top: 30px;
 }
 
 .body {
   display: grid;
-  gap: 3.125rem;
+  gap: 1.875rem;
   width: 100%;
   grid-template: minmax(550px, auto) / minmax(auto, 350px) 1fr;
 }
@@ -101,10 +101,13 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 64rem) {
   .body {
     display: grid;
     gap: 1.25rem;
-    grid-template: minmax(550px, auto) auto / 1fr;
+    grid-template: auto / 1fr;
+  }
+  .image {
+    display: none;
   }
 }

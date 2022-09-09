@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 
 import { useQueryParams } from '../../../hooks/useQueryParams';
-import { SEARCH, PAGE_ROOT } from '../../../constans/api';
+import { SEARCH, PAGE_ROOT, MOVIES } from '../../../constans/api';
 
 import { FiSearch } from 'react-icons/fi';
 
@@ -12,7 +12,7 @@ const Input = () => {
   const [inputValue, setInputValue] = useState('');
   const link = useRef(null);
   const pathTv = useQueryParams().pathTv;
-
+  
   return (
     <div className={style.wrapp}>
       <input 
@@ -24,7 +24,7 @@ const Input = () => {
       />
       <Link
         ref={link}
-        to={`${pathTv}${SEARCH}${inputValue}${PAGE_ROOT}1`}
+        to={`${pathTv === '/' ? MOVIES : pathTv}${SEARCH}${inputValue}${PAGE_ROOT}1`}
         className={style.btn}
         onClick={() => setInputValue('')}
       >

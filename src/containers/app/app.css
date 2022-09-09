@@ -67,18 +67,25 @@ main {
 h2 {
   display: inline-block;
   font-weight: 800;
-  font-size: 2rem;
-  line-height: 2.625rem;
+  font-size: 1.5rem;
+  line-height: 5.125rem;
   color: #fff;
 }
 
 p {
+  word-spacing: 2px;
+  line-height: 1.4;
   font-size: 1rem;
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 83.125rem) {
   h2 {
-    font-size: calc(24px + calc(32 - 24) * ((100vw - 320px) / (1330 - 320)));
+    font-size: calc(20px + calc(25 - 20) * ((100vw - 320px) / (1330 - 320)));
+    line-height: calc(42px + calc(82 - 42) * ((100vw - 320px) / (1330 - 320)));
   }
 }

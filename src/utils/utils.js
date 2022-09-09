@@ -12,7 +12,7 @@ export const reverseStr = str => {
 };
 
 export const roundNumber = num => {
-  const left = String(Math.round(num * 10)).split('')[0];
-  const right = String(Math.round(num * 10)).split('')[1];
-  return +(left + (+right === 0 ? '' : right)).split('').join('.');
+  return num.toFixed(1).split('.')[1] === 0 
+    ? +num.toFixed(1).split('.')[0] 
+    : +num.toFixed(1).split('.').join('.');
 }

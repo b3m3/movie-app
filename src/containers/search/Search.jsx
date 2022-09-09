@@ -21,7 +21,7 @@ const Search = () => {
   const { name } = useParams();
   const idPage = useQueryParams().idPage;
   const pathTv = useQueryParams().pathTv;
-
+  
   useEffect(() => {
     setCurrentPage(+idPage);
     window.scrollTo(0, 0);
@@ -30,7 +30,7 @@ const Search = () => {
       const res = await getApiResource(
         MOVIEDB_ROOT+SEARCH+pathTv+MOVIEDB_API+LANG+RU+QUERY+name+PAGE_ROOT+idPage
       );
-
+      
       if (res) {
         setResultsArray(res.results);
         setTotalPages(res.total_pages);

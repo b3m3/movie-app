@@ -1,12 +1,13 @@
 import Gallery from '../../components/gallery/Gallery';
 
-import { SERIES_POPULAR, SERIES_TOP_RATED, SERIES_ON_THE_AIR } from '../../constans/api';
+import { SERIES_POPULAR, SERIES_TOP_RATED, SERIES_ON_THE_AIR, SERIES_AIRING_TODAY } from '../../constans/api';
 
 const Series = () => {
   const series = [
     {title: 'Popular', url: SERIES_POPULAR},
     {title: 'On the air', url: SERIES_ON_THE_AIR},
-    {title: 'Top rated', url: SERIES_TOP_RATED}];
+    {title: 'Airing today', url: SERIES_AIRING_TODAY},
+    {title: 'Top rated', url: SERIES_TOP_RATED}]
 
   return (
     <section className="series">

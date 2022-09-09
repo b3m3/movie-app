@@ -1,8 +1,8 @@
 .navigation {
-  padding: 1.875rem 0 0 0;
+  padding: 3.125rem 0 0 0;
   display: flex;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 20px;
 }
 
 .navigation a {
