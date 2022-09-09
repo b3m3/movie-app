@@ -5,127 +5,109 @@ import Button from '../../components/ui/button/Button';
 import Rating from '../../components/rating/Rating';
 import Video from '../../components/video/Video';
 import Error from '../../components/error/Error';
-import Backdrop from '../../components/backdrop/Backdrop';
+import Backdrop from '../../components/images/backdrop';
+import Poster from '../../components/images/poster/Poster';
+import Genres from '../../components/lists/genres/Genres';
+import Countries from '../../components/lists/countries/Countries';
 
-import { POSTER_S, MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
+import { MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
+import { useQueryParams } from '../../hooks/useQueryParams';
 import { reverseStr } from '../../utils/utils';
-
-import NoImage from './img/no-image.jpg';
 
 import style from './info.module.css';
 
 const Info = () => {
-  const [infoCard, setInfoCard] = useState(null);
-  const [ganres, setGanres] = useState(null);
+  const [resultsArray, setResultsArray] = useState(null);
+  const [genres, setGenres] = useState(null);
   const [errorApi, setErrorApi] = useState(false);
-  const { id, tv } = useParams();
+  const { id } = useParams();
+  const pathTv = useQueryParams().pathTv;
   const back = useNavigate();
   
   useEffect(() => {
     (async () => {
-      const res = await getApiResource(MOVIEDB_ROOT+tv+'/'+id+MOVIEDB_API+LANG+RU);
+      const res = await getApiResource(MOVIEDB_ROOT+pathTv+id+MOVIEDB_API+LANG+RU);
 
       if (res) {
-        setInfoCard(res);
-        setGanres(res.genres);
+        setResultsArray(res);
+        setGenres(res.genres);
       } else {
         setErrorApi(true);
       }
     })();
-  }, [id, tv]);
+  }, [id]);
 
   return (
-    <div className="info-page">
+    <section>
       <div className="container">
-        <div className={style.main}>
-          {!errorApi 
-          ? <>
-             <Button
-              name="Back"
-              onClick={() => back(-1)}
-              side={true}
-            />
-            
-            {infoCard &&
-              <>
-                <div key={id} className={style.body}>   
-                  <Backdrop
-                    src={infoCard.backdrop_path}
-                    alt={infoCard.title}
-                  />           
+        {errorApi 
+          ? <Error />
+          : <div className={style.main}>
+              <Button
+                name="Back"
+                onClick={() => back(-1)}
+                side={true}
+              />
 
-                  <div className={style.image}>
-                    <img 
-                      src={infoCard.poster_path 
-                        ? POSTER_S+infoCard.poster_path 
-                        : NoImage} 
-                      alt={infoCard.title} 
-                    />
-                  </div>
+              {resultsArray && 
+                <div className={style.body}>
+                  <Backdrop
+                    src={resultsArray.backdrop_path}
+                    alt={resultsArray.title}
+                  />    
+
+                  <Poster 
+                    src={resultsArray.poster_path}
+                    alt={resultsArray.title}
+                  />
 
                   <div className={style.info}>
-                    <h2>
-                      {infoCard.title 
-                        ? infoCard.title 
-                        : infoCard.name
-                        ? infoCard.name
+                    <h3>
+                      {resultsArray.title 
+                        ? resultsArray.title 
+                        : resultsArray.name
+                        ? resultsArray.name
+                        : 'Title missing'}
+                    </h3>
+
+                    <div className={style.row}>
+                      {resultsArray.release_date 
+                        ? <h4>{reverseStr(resultsArray.release_date)}</h4>
+                        : resultsArray.first_air_date
+                        ? <h4>{reverseStr(resultsArray.first_air_date)}</h4>
                         : null}
-                    </h2>
-
-                    <div className={style.row}>
-                      <span>
-                        {infoCard.release_date 
-                          ? reverseStr(infoCard.release_date)
-                          : infoCard.first_air_date
-                          ? reverseStr(infoCard.first_air_date)
-                          : null}
-                      </span>
-                      <span>
-                        {infoCard.runtime
-                          ? infoCard.runtime + ' min'
-                          : infoCard.episode_run_time
-                          ? infoCard.episode_run_time[0] + ' min'
-                          : null}
-                      </span>
-                      <Rating data={infoCard.vote_average} />
+                      {resultsArray.runtime
+                        ? <h4>{resultsArray.runtime + ' min'}</h4>
+                        : resultsArray.episode_run_time
+                        ? <h4>{resultsArray.episode_run_time[0] + ' min'}</h4>
+                        : null}
+                      <Rating data={resultsArray.vote_average} />
                     </div>
 
-                    <div className={style.row}>
-                      {infoCard.number_of_seasons && 
-                        <p className={style.seasons}>
-                          Number of seasons: <span>{infoCard.number_of_seasons}</span>
-                        </p>}
-                      {infoCard.status && 
-                        <p>{infoCard.status}</p>
-                      }
-                    </div>
+                    {resultsArray.number_of_seasons && 
+                      <div className={style.row}>
+                        {resultsArray.number_of_seasons && 
+                          <h4>Number od seasons: <b>{resultsArray.number_of_seasons}</b></h4>}
 
-                    <ul className={style.country}>
-                      {infoCard.production_countries.map(({name}) => (
-                        <li key={name}>{name}</li>
-                      ))}
-                    </ul>
+                        {resultsArray.status && 
+                          <h4>{resultsArray.status}</h4>}
+                      </div>}
 
-                    <ul className={style.genre}>
-                      {ganres && ganres.map(item => (
-                        <li key={item.name}>{item.name}</li>
-                      ))}
-                    </ul>
-
-                    <p className={style.overview}>
-                      {infoCard.overview ? infoCard.overview : 'No overview !'}
+                    <Countries countries={resultsArray.production_countries} />
+                    <Genres genres={genres} />
+                    <p>
+                      {resultsArray.overview 
+                        ? resultsArray.overview 
+                        : 'There is no description for this video.'}
                     </p>
                   </div>
-                </div>
-                <Video id={infoCard.id} />
-              </>
-              }
-            </>
-          : <Error />}
-        </div>
+                </div>}
+
+              <Video id={id} />
+            </div>}
       </div>
-    </div>
+    </section>
   );
 }
 

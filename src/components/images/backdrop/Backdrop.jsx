@@ -1,4 +1,4 @@
-import { POSTER_B } from '../../constans/api';
+import { POSTER_B } from '../../../constans/api';
 
 import style from './backdrop.module.css';
 

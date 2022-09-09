@@ -72,11 +72,18 @@ h2 {
   color: #fff;
 }
 
+h3 {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 2.625rem;
+  color: #fff;
+}
+
 p {
   word-spacing: 2px;
-  line-height: 1.4;
+  line-height: 1.5;
   font-size: 1rem;
-  font-weight: 400;
 }
 
 a {
