@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+}
+
+.icon {
+  transform: translateY(1px);
+  font-size: 1.625rem;
+}

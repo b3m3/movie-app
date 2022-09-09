@@ -4,9 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 import Title from '../../components/title/Title';
+import Backdrop from '../../components/images/backdrop/Backdrop';
+import Poster from '../../components/images/poster/Poster';
 import Button from '../../components/ui/button/Button';
 import Rating from '../../components/rating/Rating';
-import { POSTER_B, POSTER_S, MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, LANG, RU } from '../../constans/api';
+import Error from '../../components/error/Error';
+import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { reverseStr } from '../../utils/utils';
@@ -36,56 +39,73 @@ const Home = () => {
   return (
     <section className={style.home}>
       <div className="container">
-
-      <div className={style.header}>
-        <Title title={"Tranding"} />
-        <ImFire/>
-      </div>
-      
-      <Swiper
-        modules={[Navigation]}
-        className={style.swiper}
-        spaceBetween={20}
-        slidesPerView={1.33}
-      >
-        {resultsArray && resultsArray.map(({
-          id, backdrop_path, poster_path, overview, 
-          release_date, first_air_date, title, name, vote_average}) => (
-          <SwiperSlide key={id}>
-            <div className={style.body}>
-              <img 
-                className={style.backdrop}
-                src={backdrop_path && POSTER_B+backdrop_path} 
-                alt={title} 
+        {errorApi
+          ? <Error />
+          : <>
+              <Title 
+                title='Tranding'
+                icon={<ImFire/>}
+                color={'red'}
               />
-
-              <div className={style.postes}>
-                <img src={poster_path && POSTER_S+poster_path} alt={title} />
-              </div>
-
-              <div className={style.info}>
-                <div className={style.info_body}>
-                  <h2>{title && title || name && name}</h2>
-                  <div className={style.row}>
-                    <p>{release_date && reverseStr(release_date) || first_air_date && reverseStr(first_air_date)}</p>
-                    {vote_average && <Rating data={vote_average} />}
-                  </div>
-                  <p>{overview && overview.length > 200 ? overview.slice(0, 200) + '...' : overview}</p>
-                </div>
-                <div className={style.info_bottom}>
-                  <Link 
-                    to={name 
-                      ? `${pathTv}${SERIES}${id}` 
-                      : `${pathTv}${MOVIES}${id}`}
+              
+              <Swiper
+                modules={[Navigation]}
+                className={style.swiper}
+                spaceBetween={20}
+                slidesPerView={1.33}
+              >
+                {resultsArray && resultsArray.map(({
+                  id, backdrop_path, poster_path, overview, release_date, first_air_date, title, name, vote_average}) => (
+                  <SwiperSlide 
+                    key={id}
+                    className={style.slide}
                   >
-                    <Button name='More' />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+                    <Backdrop
+                      src={backdrop_path}
+                      alt={title}
+                    />
+                    <Poster 
+                      src={poster_path}
+                      alt={title}
+                    />
+
+                    <div className={style.info}>
+                      <div className={style.block}>
+                        <h2>
+                          {title ? title : name ? name : 'Title missing'}
+                        </h2>
+
+                        <div className={style.row}>
+                          {release_date 
+                            ? <h4>{reverseStr(release_date)}</h4>
+                            : null}
+                          {first_air_date 
+                            ? <h4>{reverseStr(first_air_date)}</h4>
+                            : null}
+                          {vote_average && 
+                            <Rating data={vote_average} />}
+                        </div>
+
+                        <p>
+                          {overview.length > 150 
+                            ? overview.slice(0, 150) + '...' 
+                            : 'There is no description for this video.'}
+                        </p>
+                      </div>
+
+                      <Link 
+                        to={name 
+                          ? `${pathTv}${SERIES}${id}` 
+                          : `${pathTv}${MOVIES}${id}`}
+                      >
+                        <Button name='More' />
+                      </Link>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </>
+        }
       </div>
     </section>
   );

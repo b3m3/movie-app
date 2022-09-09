@@ -36,7 +36,7 @@ const Info = () => {
         setErrorApi(true);
       }
     })();
-  }, [id]);
+  }, [id, pathTv]);
 
   return (
     <section>

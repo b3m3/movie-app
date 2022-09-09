@@ -22,8 +22,6 @@ const Video = ({ id }) => {
     })();
   }, []);
 
-  console.log(videoData);
-
   return (
     <>
       {videoData && videoData.results.map(item => (

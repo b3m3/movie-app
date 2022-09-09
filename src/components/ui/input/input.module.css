@@ -4,7 +4,7 @@
   gap: 5px;
   border: none;
   height: 2.1875rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
   width: 100%;
   max-width: 15.625rem;
   border-radius: 25px;
@@ -19,8 +19,12 @@
   background-color: transparent;
 }
 
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .btn {
-  color: var(--grey);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   padding: .1875rem 0 0 0;
   transition: .3s;
@@ -28,10 +32,6 @@
 
 .btn:hover {
   color: #fff;
-}
-
-.input:focus .wrapp {
-  border: .0625rem solid rgba(255, 255, 255, 0.2);
 }
 
 .input:focus {

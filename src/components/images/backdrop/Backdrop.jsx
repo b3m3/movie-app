@@ -4,11 +4,14 @@ import style from './backdrop.module.css';
 
 const Backdrop = ({ src, alt }) => {
   return (
-    <img 
-      className={style.backdrop}
-      src={src ? POSTER_B+src : null}
-      alt={alt && alt}
-    />
+    <>
+      <img 
+        className={style.backdrop}
+        src={src ? POSTER_B+src : null}
+        alt={alt && alt}
+      />
+      <span className={style.bg} />
+    </>
   );
 }
 
