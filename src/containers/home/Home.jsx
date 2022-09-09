@@ -9,7 +9,7 @@ import Rating from '../../components/rating/Rating';
 import { POSTER_B, POSTER_S, MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
-import { reverseStr, roundNumber } from '../../utils/utils';
+import { reverseStr } from '../../utils/utils';
 
 import { ImFire } from 'react-icons/im';
 

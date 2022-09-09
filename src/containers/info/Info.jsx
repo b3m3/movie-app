@@ -5,7 +5,9 @@ import Button from '../../components/ui/button/Button';
 import Rating from '../../components/rating/Rating';
 import Video from '../../components/video/Video';
 import Error from '../../components/error/Error';
-import { POSTER_S, POSTER_B, MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
+import Backdrop from '../../components/backdrop/Backdrop';
+
+import { POSTER_S, MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { reverseStr } from '../../utils/utils';
 
@@ -22,7 +24,7 @@ const Info = () => {
   
   useEffect(() => {
     (async () => {
-      const res = await getApiResource(`${MOVIEDB_ROOT}${tv}/${id}${MOVIEDB_API}${LANG}${RU}`);
+      const res = await getApiResource(MOVIEDB_ROOT+tv+'/'+id+MOVIEDB_API+LANG+RU);
 
       if (res) {
         setInfoCard(res);
@@ -47,16 +49,11 @@ const Info = () => {
             
             {infoCard &&
               <>
-                <div key={id} className={style.body}>              
-                  <img 
-                    className={style.backdrop}
-                    src={infoCard.backdrop_path 
-                      ? POSTER_B+infoCard.backdrop_path 
-                      : infoCard.poster_path
-                      ? POSTER_B+infoCard.poster_path
-                      : null}
-                    alt={infoCard.backdrop_path && infoCard.title}
-                  />
+                <div key={id} className={style.body}>   
+                  <Backdrop
+                    src={infoCard.backdrop_path}
+                    alt={infoCard.title}
+                  />           
 
                   <div className={style.image}>
                     <img 
