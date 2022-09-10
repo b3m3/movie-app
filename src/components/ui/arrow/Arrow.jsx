@@ -7,7 +7,7 @@ import style from './arrow.module.css';
 
 const Arrow = forwardRef(({next}, ref) => {
   return (
-    <button 
+    <button
       ref={ref}
       className={`${style.arrow} ${next ? style.arrow_right : style.arrow_left}`}
     >

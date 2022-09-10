@@ -4,18 +4,18 @@ import { useParams } from 'react-router-dom';
 import { Cards } from '../../components/cards/Cards';
 import Title from '../../components/title/Title';
 import Navigation from '../../components/navigation/Navigation';
-import Error from '../../components/error/Error';
 
-import { MOVIEDB_ROOT, MOVIEDB_API, PAGE_ROOT, LANG, RU} from '../../constans/api';
+import { MOVIEDB_ROOT, MOVIEDB_API, PAGE_ROOT, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { changeUrlToStr } from '../../utils/utils';
 
-const Category = () => {
+import { withErrorApi } from '../../hoc-helpers/withErrorApi';
+
+const Category = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
   const [totalPages, setTotalPages] = useState(null)
   const [currentPage, setCurrentPage] = useState(null);
-  const [errorApi, setErrorApi] = useState(false);
 
   const { category } = useParams();
   const idPage = useQueryParams().idPage;
@@ -42,24 +42,20 @@ const Category = () => {
   return (
     <div className="category">
       <div className="container">
-        {errorApi 
-          ? <Error />
-          : <>
-              <Title 
-                title={category && changeUrlToStr(category)}
-              />
-              <Cards 
-                resultsArray={resultsArray}
-              />
-              <Navigation
-                currentPage={currentPage}
-                idPage={idPage}
-                totalPages={totalPages}
-              />
-            </>}
+        <Title
+          title={ category && changeUrlToStr(category) }
+        />
+        <Cards
+          resultsArray={resultsArray}
+        />
+        <Navigation
+          currentPage={currentPage}
+          idPage={idPage}
+          totalPages={totalPages}
+        />
       </div>
     </div>
   );
 }
 
-export default Category;
+export default withErrorApi(Category);

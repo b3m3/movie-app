@@ -54,51 +54,49 @@ export const CardsSlider = ({ resultsArray }) => {
   const pathTv = useQueryParams().pathTv;
 
   return (
-    <div className={style.slider} >
-      <Swiper
-        modules={[Navigation]}
-        className={style.swiper}
-        spaceBetween={20}
-        slidesPerView={'auto'}
-        navigation={{
-          nextEl: next.current,
-          prevEl: prev.current
-        }}
-      >
-        {resultsArray && resultsArray.map(({ id, poster_path, title, name, vote_average }) => (
-          <SwiperSlide
-            key={id}
-            className={style.slide}
+    <Swiper
+      modules={[Navigation]}
+      className={style.swiper}
+      spaceBetween={20}
+      slidesPerView={'auto'}
+      navigation={{
+        nextEl: next.current,
+        prevEl: prev.current
+      }}
+    >
+      {resultsArray && resultsArray.map(({ id, poster_path, title, name, vote_average }) => (
+        <SwiperSlide
+          key={id}
+          className={style.slide}
+        >
+          <Link
+            className={style.card}
+            to={`/${pathTv}${id}`}
           >
-            <Link
-              className={style.card}
-              to={`/${pathTv}${id}`}
-            >
 
-              <span className={style.rating}>
-                <Rating data={vote_average} />
-              </span>
+            <span className={style.rating}>
+              <Rating data={vote_average} />
+            </span>
 
-              <div className={style.poster}>
-                <img src={poster_path && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
-              </div>
+            <div className={style.poster}>
+              <img src={poster_path && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
+            </div>
 
-              <p>
-                {title && title}
-                {name && name}
-              </p> 
-            </Link>
-          </SwiperSlide>
-        ))}
+            <p>
+              {title && title}
+              {name && name}
+            </p> 
+          </Link>
+        </SwiperSlide>
+      ))}
 
-        <Arrow 
-          ref={prev}
-        />
-        <Arrow 
-          next={true} 
-          ref={next}
-        />
-      </Swiper>
-    </div>
+      <Arrow 
+        ref={prev}
+      />
+      <Arrow 
+        next={true} 
+        ref={next}
+      />
+    </Swiper>
   );
 }
