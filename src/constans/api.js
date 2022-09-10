@@ -4,6 +4,7 @@ export const MOVIEDB_API = `?api_key=${process.env.REACT_APP_API_KEY}`;
 export const MOVIES = 'movie/';
 export const SERIES = 'tv/';
 export const SEARCH = 'search/';
+export const ALL = 'all/';
 // export const MULTI = 'multi/';
 
 export const VIDEOS = '/videos';

@@ -9,7 +9,7 @@ import Poster from '../../components/images/poster/Poster';
 import Button from '../../components/ui/button/Button';
 import Rating from '../../components/rating/Rating';
 import Error from '../../components/error/Error';
-import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, LANG, RU } from '../../constans/api';
+import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, ALL, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { reverseStr } from '../../utils/utils';
@@ -25,7 +25,7 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await getApiResource(MOVIEDB_ROOT+TRANDING+MOVIES+DAY+MOVIEDB_API+LANG+RU);
+      const res = await getApiResource(MOVIEDB_ROOT+TRANDING+ALL+DAY+MOVIEDB_API+LANG+RU);
 
       if (res) {
         setResultsArray(res.results);

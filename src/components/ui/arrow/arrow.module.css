@@ -1,0 +1,32 @@
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  z-index: 5;
+  content: '';
+  top: 50%;
+  transform: translateY(-40px);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  transition: .3s;
+}
+
+.arrow:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.arrow_left {
+  left: 0;
+}
+
+.arrow_right {
+  right: 0;
+}
+

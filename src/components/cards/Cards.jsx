@@ -7,9 +7,9 @@ import Rating from '../rating/Rating';
 import { POSTER_S } from '../../constans/api';
 import { useQueryParams } from '../../hooks/useQueryParams';
 
+import Arrow from '../ui/arrow/Arrow';
+
 import NoImage from './img/no-image.jpg';
-import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
-import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -90,14 +90,14 @@ export const CardsSlider = ({ resultsArray }) => {
             </Link>
           </SwiperSlide>
         ))}
-        <div className={style.arrows}>
-          <div className={style.arrow} ref={prev}>
-            <span><BsFillArrowLeftCircleFill /></span>
-          </div>
-          <div className={style.arrow} ref={next}>
-            <span><BsFillArrowRightCircleFill /></span>
-          </div>
-        </div>
+
+        <Arrow 
+          ref={prev}
+        />
+        <Arrow 
+          next={true} 
+          ref={next}
+        />
       </Swiper>
     </div>
   );
