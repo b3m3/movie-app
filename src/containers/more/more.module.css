@@ -10,25 +10,7 @@
   display: grid;
   gap: 1.875rem;
   width: 100%;
-  grid-template: minmax(550px, auto) / minmax(auto, 350px) 1fr;
-}
-
-.info {
-  position: relative;
-  z-index: 1;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  background-color: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  border-radius: 1.25rem;
-}
-
-.row {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  grid-template: minmax(34.375rem, auto) / minmax(auto, 21.875rem) 1fr;
 }
 
 @media screen and (max-width: 83.125rem) {

@@ -6,14 +6,13 @@ import { Navigation } from 'swiper';
 import Title from '../../components/title/Title';
 import Backdrop from '../../components/images/backdrop/Backdrop';
 import Poster from '../../components/images/poster/Poster';
-import Rating from '../../components/rating/Rating';
 import Button from '../../components/ui/button/Button';
 import Arrow from '../../components/ui/arrow/Arrow';
+import Info from '../../components/info/Info';
 
 import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, ALL, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
-import { reverseStr } from '../../utils/utils';
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 
 import { ImFire } from 'react-icons/im';
@@ -73,29 +72,15 @@ const Home = ({ setErrorApi }) => {
                   alt={title}
                 />
 
-                <div className={style.info}>
-                  <div className={style.block}>
-                    <h2>
-                      {title ? title : name ? name : 'Title missing'}
-                    </h2>
-
-                    <div className={style.row}>
-                      {release_date 
-                        ? <h4>{reverseStr(release_date)}</h4>
-                        : null}
-                      {first_air_date 
-                        ? <h4>{reverseStr(first_air_date)}</h4>
-                        : null}
-                      {vote_average && 
-                        <Rating data={vote_average} />}
-                    </div>
-
-                    <p>
-                      {overview.length > 150 
-                        ? overview.slice(0, 150) + '...' 
-                        : 'There is no description for this video.'}
-                    </p>
-                  </div>
+                <div className={style.box}>
+                  <Info 
+                    title={title} 
+                    name={name} 
+                    release={release_date}
+                    date={first_air_date}
+                    vote={vote_average}
+                    overview={overview.length > 150 ? overview.slice(0, 150) + '...' : overview}
+                  />
 
                   <Link 
                     to={name 

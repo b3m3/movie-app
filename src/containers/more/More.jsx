@@ -2,24 +2,20 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import Button from '../../components/ui/button/Button';
-import Rating from '../../components/rating/Rating';
 import Video from '../../components/video/Video';
 import Backdrop from '../../components/images/backdrop';
 import Poster from '../../components/images/poster/Poster';
-import Genres from '../../components/lists/genres/Genres';
-import Countries from '../../components/lists/countries/Countries';
+import Info from '../../components/info/Info';
 
 import { MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
-import { reverseStr } from '../../utils/utils';
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 
 import style from './more.module.css';
 
 const More = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
-  const [genres, setGenres] = useState(null);
   const { id } = useParams();
   const pathTv = useQueryParams().pathTv;
   const back = useNavigate();
@@ -30,7 +26,6 @@ const More = ({ setErrorApi }) => {
 
       if (res) {
         setResultsArray(res);
-        setGenres(res.genres);
       } else {
         setErrorApi(true);
       }
@@ -59,46 +54,21 @@ const More = ({ setErrorApi }) => {
                 alt={resultsArray.title}
               />
 
-              <div className={style.info}>
-                <h3>
-                  {resultsArray.title 
-                    ? resultsArray.title 
-                    : resultsArray.name
-                    ? resultsArray.name
-                    : 'Title missing'}
-                </h3>
-
-                <div className={style.row}>
-                  {resultsArray.release_date 
-                    ? <h4>{reverseStr(resultsArray.release_date)}</h4>
-                    : resultsArray.first_air_date
-                    ? <h4>{reverseStr(resultsArray.first_air_date)}</h4>
-                    : null}
-                  {resultsArray.runtime
-                    ? <h4>{resultsArray.runtime + ' min'}</h4>
-                    : resultsArray.episode_run_time
-                    ? <h4>{resultsArray.episode_run_time[0] + ' min'}</h4>
-                    : null}
-                  <Rating data={resultsArray.vote_average} />
-                </div>
-
-                {resultsArray.number_of_seasons && 
-                  <div className={style.row}>
-                    {resultsArray.number_of_seasons && 
-                      <h4>Number od seasons: <b>{resultsArray.number_of_seasons}</b></h4>}
-
-                    {resultsArray.status && 
-                      <h4>{resultsArray.status}</h4>}
-                  </div>}
-
-                <Countries countries={resultsArray.production_countries} />
-                <Genres genres={genres} />
-                <p>
-                  {resultsArray.overview 
-                    ? resultsArray.overview 
-                    : 'There is no description for this video.'}
-                </p>
-              </div>
+              <Info
+                bg={true}
+                title={resultsArray.title} 
+                name={resultsArray.name} 
+                release={resultsArray.release_date}
+                date={resultsArray.first_air_date}
+                runtime={resultsArray.runtime}
+                time={resultsArray.episode_run_time}
+                vote={resultsArray.vote_average}
+                seasons={resultsArray.number_of_seasons}
+                status={resultsArray.status}
+                countries={resultsArray.production_countries}
+                genres={resultsArray.genres}
+                overview={resultsArray.overview}
+              />
             </div>}
 
           <Video id={id} />

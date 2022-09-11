@@ -3,10 +3,6 @@
   height: 31.25rem;
 }
 
-.info img {
-  border: 10px solid #fff;
-}
-
 .slide {
   position: relative;
   display: grid;
@@ -16,29 +12,18 @@
   overflow: hidden;
 }
 
-.info {
+.box {
   display: flex;
   flex-direction: column;
-  gap: 1.875rem;
-  padding: 1.875rem;
-}
-
-.row {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.block {
-  display: flex;
-  flex-direction: column;
+  align-items: start;
   height: 100%;
   gap: .9375rem;
   flex: 1 1 auto;
+  padding: 0 0 1.25rem 0;
 }
 
-.info h2 {
-  line-height: 1;
+.box a {
+  margin: 0 0 0 1.25rem;
 }
 
 @media screen and (max-width: 64rem) {
@@ -48,16 +33,13 @@
   .slide {
     padding: 1.25rem;
   }
-  .info {
-    padding: 1.25rem 0;
-  }
 }
 
 @media screen and (max-width: 26.5625rem) {
   .home .swiper {
     height: 25rem;
   }
-  .info p {
+  .box p {
     display: none;
   }
 }

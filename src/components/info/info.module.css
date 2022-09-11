@@ -1,0 +1,21 @@
+.info {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: #fff;
+  border-radius: 1.25rem;
+  flex: 1 1 auto;
+}
+
+.bg {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}

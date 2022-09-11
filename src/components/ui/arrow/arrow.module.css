@@ -3,14 +3,15 @@
   position: absolute;
   z-index: 10;
   top: 50%;
-  transform: translateY(-40px);
-  width: 40px;
-  height: 40px;
-  font-size: 40px;
-  color: #fff;
+  transform: translateY(-2.5rem);
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255, .45);
   background-color: transparent;
   border-radius: 50%;
   border: none;
+  transition: .3s;
 }
 
 .prev {
@@ -19,4 +20,7 @@
 
 .next {
   right: 0;
+}
+.arrow:hover {
+  color: rgb(255, 255, 255, .85);
 }
