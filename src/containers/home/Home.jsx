@@ -58,8 +58,8 @@ const Home = ({ setErrorApi }) => {
               nextEl: next.current
             }}
           >
-            {resultsArray && resultsArray.map(({
-              id, backdrop_path, poster_path, overview, release_date, first_air_date, title, name, vote_average}) => (
+            {resultsArray && resultsArray.map(({id, backdrop_path, poster_path, overview, 
+              release_date, first_air_date, title, name, vote_average}) => (
               <SwiperSlide 
                 key={id}
                 className={style.slide}

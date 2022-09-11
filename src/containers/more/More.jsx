@@ -15,9 +15,9 @@ import { useQueryParams } from '../../hooks/useQueryParams';
 import { reverseStr } from '../../utils/utils';
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 
-import style from './info.module.css';
+import style from './more.module.css';
 
-const Info = ({ setErrorApi }) => {
+const More = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
   const [genres, setGenres] = useState(null);
   const { id } = useParams();
@@ -108,4 +108,4 @@ const Info = ({ setErrorApi }) => {
   );
 }
 
-export default withErrorApi(Info);
+export default withErrorApi(More);
