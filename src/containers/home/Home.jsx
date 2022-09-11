@@ -107,8 +107,9 @@ const Home = ({ setErrorApi }) => {
                 </div>
               </SwiperSlide>
             ))}
+            
             <Arrow ref={prev} />
-            <Arrow next={true} ref={next} />
+            <Arrow ref={next} next={true} />
           </Swiper>
         </>
       </div>

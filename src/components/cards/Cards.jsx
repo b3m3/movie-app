@@ -7,8 +7,6 @@ import Rating from '../rating/Rating';
 import { POSTER_S } from '../../constans/api';
 import { useQueryParams } from '../../hooks/useQueryParams';
 
-import Arrow from '../ui/arrow/Arrow';
-
 import NoImage from './img/no-image.jpg';
 
 import 'swiper/css';
@@ -38,8 +36,7 @@ export const Cards = ({ resultsArray }) => {
             </div>
 
             <p>
-              {title && title}
-              {name && name}
+              {title && title} {name && name}
             </p> 
           </Link>
         </li>
@@ -89,14 +86,6 @@ export const CardsSlider = ({ resultsArray }) => {
           </Link>
         </SwiperSlide>
       ))}
-
-      <Arrow 
-        ref={prev}
-      />
-      <Arrow 
-        next={true} 
-        ref={next}
-      />
     </Swiper>
   );
 }

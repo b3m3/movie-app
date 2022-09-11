@@ -7,12 +7,14 @@ import style from './arrow.module.css';
 
 const Arrow = forwardRef(({next}, ref) => {
   return (
-    <button
-      ref={ref}
-      className={`${style.arrow} ${next ? style.arrow_right : style.arrow_left}`}
-    >
-      {next ? <BsFillArrowRightCircleFill /> : <BsFillArrowLeftCircleFill />}
-    </button>
+    <>
+      <button
+        ref={ref}
+        className={`${style.arrow} ${next ? style.next : style.prev}`}
+      >
+        {next ? <BsFillArrowRightCircleFill /> : <BsFillArrowLeftCircleFill />}
+      </button>
+    </>
   );
 });
 

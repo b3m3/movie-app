@@ -6,7 +6,7 @@ import Title from '../../components/title/Title';
 import Navigation from '../../components/navigation/Navigation';
 import Error from '../../components/error/Error';
 
-import { MOVIEDB_ROOT, SEARCH, QUERY, MOVIEDB_API, PAGE_ROOT, LANG, RU} from '../../constans/api';
+import { MOVIEDB_ROOT, SEARCH, QUERY, MOVIEDB_API, PAGE_ROOT, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { changeUrlToStr } from '../../utils/utils';
