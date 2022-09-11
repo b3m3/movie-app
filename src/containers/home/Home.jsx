@@ -38,7 +38,7 @@ const Home = ({ setErrorApi }) => {
   }, [])
 
   return (
-    <section className={style.home}>
+    <section className={`${style.home} home`}>
       <div className="container">
         <>
           <Title 
@@ -50,7 +50,7 @@ const Home = ({ setErrorApi }) => {
             modules={[Navigation]}
             className={style.swiper}
             spaceBetween={20}
-            slidesPerView={1.33}
+            slidesPerView={1.355}
             navigation={{
               prevEl: prev.current,
               nextEl: next.current
