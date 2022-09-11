@@ -5,6 +5,10 @@
 }
 
 .icon {
-  transform: translateY(1px);
+  transform: translateY(3px);
   font-size: 1.625rem;
+}
+
+.icon svg {
+  transition: .2s ease-in;
 }

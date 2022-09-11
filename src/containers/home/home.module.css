@@ -1,3 +1,17 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  gap: .9375rem;
+  flex: 1 1 auto;
+  padding: 0 0 1.25rem 0;
+}
+
+.box a {
+  margin: 0 0 0 1.25rem;
+}
+
 .home .swiper {
   margin-top: 1.25rem;
   height: 31.25rem;
@@ -12,20 +26,6 @@
   overflow: hidden;
 }
 
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  height: 100%;
-  gap: .9375rem;
-  flex: 1 1 auto;
-  padding: 0 0 1.25rem 0;
-}
-
-.box a {
-  margin: 0 0 0 1.25rem;
-}
-
 @media screen and (max-width: 64rem) {
   .slide {
     grid-template: 0 1fr / 1fr;
@@ -36,9 +36,6 @@
 }
 
 @media screen and (max-width: 26.5625rem) {
-  .home .swiper {
-    height: 25rem;
-  }
   .box p {
     display: none;
   }

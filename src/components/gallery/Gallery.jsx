@@ -12,7 +12,7 @@ import { useQueryParams } from '../../hooks/useQueryParams';
 
 import style from './gallery.module.css';
 
-const Gallery = ({ title, url }) => {
+const Gallery = ({ title, url, icon, color }) => {
   const [resultsArray, setResultsArray] = useState([]);
   const [errorApi, setErrorApi] = useState(false);
   const pathTv = useQueryParams().pathTv;
@@ -39,6 +39,8 @@ const Gallery = ({ title, url }) => {
         >
           <Title 
             title={title}
+            icon={icon}
+            color={color}
           />
         </Link>
         {!errorApi 

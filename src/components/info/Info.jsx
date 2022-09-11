@@ -4,7 +4,7 @@ import Genres from '../lists/genres/Genres';
 
 import { reverseStr } from '../../utils/utils';
 
-import style from './info.module.css';
+import style from './info.module.css'; 
 
 const Info = ({ bg, title, name, release, date, runtime, time, vote, seasons, status, countries, genres, overview }) => {
   return (

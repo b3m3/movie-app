@@ -31,7 +31,6 @@ const Home = ({ setErrorApi }) => {
 
       if (res) {
         setResultsArray(res.results);
-        setErrorApi(false);
       } else {
         setErrorApi(true);
       }
@@ -57,36 +56,31 @@ const Home = ({ setErrorApi }) => {
               nextEl: next.current
             }}
           >
-            {resultsArray && resultsArray.map(({id, backdrop_path, poster_path, overview, 
-              release_date, first_air_date, title, name, vote_average}) => (
+            {resultsArray && resultsArray.map(item => (
               <SwiperSlide 
-                key={id}
+                key={item.id}
                 className={style.slide}
               >
                 <Backdrop
-                  src={backdrop_path}
-                  alt={title}
+                  src={item.backdrop_path}
+                  alt={item.title}
                 />
                 <Poster 
-                  src={poster_path}
-                  alt={title}
+                  src={item.poster_path}
+                  alt={item.title}
                 />
 
                 <div className={style.box}>
                   <Info 
-                    title={title} 
-                    name={name} 
-                    release={release_date}
-                    date={first_air_date}
-                    vote={vote_average}
-                    overview={overview.length > 150 ? overview.slice(0, 150) + '...' : overview}
+                    title={item.title} 
+                    name={item.name} 
+                    release={item.release_date}
+                    date={item.first_air_date}
+                    vote={item.vote_average}
+                    overview={item.overview.length > 150 ? item.overview.slice(0, 150) + '...' : item.overview}
                   />
 
-                  <Link 
-                    to={name 
-                      ? `${pathTv}${SERIES}${id}` 
-                      : `${pathTv}${MOVIES}${id}`}
-                  >
+                  <Link to={ item.name ? `${pathTv}${SERIES}${item.id}` : `${pathTv}${MOVIES}${item.id}` } >
                     <Button name='More' />
                   </Link>
                 </div>
