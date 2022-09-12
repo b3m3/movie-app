@@ -18,6 +18,10 @@
   border-radius: 0 1.25rem 1.25rem 0;
 }
 
+.home .poster {
+  border: 1px solid #fff;
+}
+
 .slide {
   position: relative;
   display: grid;

@@ -4,9 +4,9 @@ import NoImage from './img/no-image.jpg';
 
 import style from './poster.module.css';
 
-const Poster = ({ src, alt }) => {
+const Poster = ({ hover, src, alt }) => {
   return (
-    <div className={style.poster}>
+    <div className={`${style.poster} ${hover ? style.hover : null}`}>
       <img
         src={src ? POSTER_S+src : NoImage}
         alt={alt && alt}

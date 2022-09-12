@@ -30,8 +30,6 @@ const Search = () => {
       const res = await getApiResource(
         MOVIEDB_ROOT+SEARCH+pathTv+MOVIEDB_API+LANG+RU+QUERY+name+PAGE_ROOT+idPage
       );
-
-      console.log();
       
       if (res) {
         setResultsArray(res.results);

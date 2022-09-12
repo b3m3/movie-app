@@ -5,10 +5,8 @@ import { Navigation } from 'swiper';
 
 import Rating from '../rating/Rating';
 import Arrow from '../ui/arrow/Arrow';
-import { POSTER_S } from '../../constans/api';
+import Poster from '../images/poster/Poster';
 import { useQueryParams } from '../../hooks/useQueryParams';
-
-import NoImage from './img/no-image.jpg';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -29,9 +27,11 @@ export const Cards = ({ resultsArray }) => {
               <Rating data={vote_average} />
             </span>
 
-            <div className={style.poster}>
-              <img src={poster_path ? POSTER_S+poster_path : NoImage} alt={title} />
-            </div>
+            <Poster 
+              src={poster_path}
+              alt={title}
+              hover={true}
+            />
 
             <p>
               {title && title} {name && name}
@@ -69,9 +69,11 @@ export const CardsSlider = ({ resultsArray }) => {
               <Rating data={vote_average} />
             </span>
 
-            <div className={style.poster}>
-              <img src={poster_path && POSTER_S ? POSTER_S+poster_path : NoImage} alt={title} />
-            </div>
+            <Poster 
+              src={poster_path}
+              alt={title}
+              hover={true}
+            />
 
             <p>
               {title && title} {name && name}

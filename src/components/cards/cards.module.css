@@ -1,46 +1,17 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14.0625rem, 1fr));
-  grid-column-gap: .9375rem;
-  grid-row-gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(12.8125rem, 1fr));
+  grid-column-gap: 15px;
+  grid-row-gap: 20px;
 }
 
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template: 320px auto / 1fr;
   gap: .625rem;
   text-decoration: none;
   text-align: center;
-  max-width: 280px;
-}
-
-.poster {
-  position: relative;
-  height: 20.625rem;
-  border-radius: .9375rem;
-  overflow: hidden;
-  transition: .3s ease;
-}
-
-.card:hover .poster {
-  box-shadow: 0 0 .9375rem 0 #fff;
-}
-
-.card:hover .poster img {
-  transform: scale(1.05);
-}
-
-.poster img {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: .3s ease-out;
-  object-position: top center;
 }
 
 .list p {
@@ -51,12 +22,12 @@
 
 .rating {
   position: absolute;
-  right: .625rem;
-  top: .625rem;
+  right: 10px;
+  top: 10px;
   z-index: 3;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 48rem) {
   .card {
     max-width: unset;
   }
@@ -65,11 +36,11 @@
 /* swiper  */
 
 .swiper {
-  padding: .9375rem;
+  padding: 15px;
 }
 
 .slide {
-  width: 14.75rem;
+  width: 236px;
 }
 
 .slide p {
