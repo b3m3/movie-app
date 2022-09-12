@@ -5,7 +5,8 @@ const Error = ({ noResults, name }) => {
       <div className={style.error}>
         {noResults 
           ? <p>
-              No results found for "{name}"
+              No results found for "{name}". 
+              Re-enter or change category
             </p>
           : <p>
               An error has occurred. We cannot display data.<br />
