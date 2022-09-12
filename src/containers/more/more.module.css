@@ -1,12 +1,9 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 3.125rem;
-  align-items: flex-start;
   padding-top: 1.875rem;
 }
 
 .body {
+  padding: 3.125rem 0;
   display: grid;
   gap: 1.875rem;
   width: 100%;
