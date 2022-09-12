@@ -20,7 +20,7 @@ const Video = ({ id }) => {
         setVideoData(res);
       }
     })();
-  }, []);
+  }, [tv, id]);
 
   return (
     <>
@@ -34,7 +34,9 @@ const Video = ({ id }) => {
             <iframe
               className={style.iframe}
               src={'https://www.youtube.com/embed/'+item.key}
+              title="YouTube video player"
               frameBorder="0"
+              width="100%"
               allowFullScreen
               allow="autoplay; encrypted-media;"
             />
