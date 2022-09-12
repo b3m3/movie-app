@@ -35,6 +35,7 @@ const Video = ({ id }) => {
               className={style.iframe}
               src={'https://www.youtube.com/embed/'+item.key}
               frameBorder="0"
+              width="100%"
               allowFullScreen
               allow="autoplay; encrypted-media;"
             />

@@ -29,7 +29,6 @@ const Gallery = ({ title, url, icon, color }) => {
     })();
   }, [url]);
 
-
   return (
     <div className="category">
       <div className="container">
