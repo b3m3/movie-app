@@ -5,12 +5,14 @@ const Error = ({ noResults, name }) => {
       <div className={style.error}>
         {noResults 
           ? <p>
-              No results found for "{name}". 
-              Re-enter or change category
+              По запросу "{name}" ничего не найдено &#128532;.<br />
+              Повторите ввод, или измените категорию
             </p>
           : <p>
-              An error has occurred. We cannot display data.<br />
-              Come back when we fix everything or reboot your page.
+              {/* An error has occurred. We cannot display data.<br />
+              Come back when we fix everything or reboot your page. */}
+              Произошла ошибка. Мы не можем отобразить данные.<br />
+              Возвращайтесь, когда мы все исправим или перезагрузите страницу.
             </p>}
       </div>
   );
