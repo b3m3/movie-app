@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12.8125rem, 1fr));
   grid-column-gap: 15px;
-  grid-row-gap: 20px;
+  grid-row-gap: 1.25rem;
 }
 
 /* swiper  */

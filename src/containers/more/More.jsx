@@ -30,7 +30,7 @@ const More = ({ setErrorApi }) => {
         setErrorApi(true);
       }
     })();
-  }, [id, pathTv]);
+  }, [id, pathTv, setErrorApi]);
 
   return (
     <section>
@@ -47,7 +47,7 @@ const More = ({ setErrorApi }) => {
               <Backdrop
                 src={resultsArray.backdrop_path}
                 alt={resultsArray.title}
-              />    
+              />
 
               <Poster 
                 src={resultsArray.poster_path}

@@ -36,8 +36,6 @@ const Video = ({ id }) => {
               src={'https://www.youtube.com/embed/'+item.key}
               title="YouTube video player"
               frameBorder="0"
-              width="100%"
-              min-width="100%"
               allowFullScreen
               allow="autoplay; encrypted-media;"
             />

@@ -15,10 +15,12 @@
   transition: .3s;
 }
 
-.poster.hover:hover img {
-  transform: scale(1.1);
-}
-
-.poster.hover:hover {
-  box-shadow: 0 0 15px #fff;
+@media(any-hover: hover) {
+  .poster.hover:hover img {
+    transform: scale(1.1);
+  }
+  
+  .poster.hover:hover {
+    box-shadow: 0 0 15px #fff;
+  }
 }
