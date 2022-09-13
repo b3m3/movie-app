@@ -37,6 +37,7 @@ const Video = ({ id }) => {
               title="YouTube video player"
               frameBorder="0"
               width="100%"
+              min-width="100%"
               allowFullScreen
               allow="autoplay; encrypted-media;"
             />

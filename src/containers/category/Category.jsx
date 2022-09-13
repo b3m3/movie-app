@@ -37,13 +37,13 @@ const Category = ({ setErrorApi }) => {
         setErrorApi(true)
       }
     })();
-  }, [idPage]);
+  }, [category, idPage, pathTv, setErrorApi]);
 
   return (
     <div className="category">
       <div className="container">
         <Title
-          title={ category && changeUrlToStr(category) }
+          title={category && changeUrlToStr(category)}
         />
         <Cards
           resultsArray={resultsArray}
