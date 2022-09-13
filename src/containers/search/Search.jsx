@@ -29,7 +29,7 @@ const Search = () => {
     (async () => {
       const res = await getApiResource(
         MOVIEDB_ROOT+SEARCH+pathTv+MOVIEDB_API+LANG+RU+QUERY+name+PAGE_ROOT+idPage
-      );
+      ); 
       
       if (res) {
         setResultsArray(res.results);
@@ -45,7 +45,7 @@ const Search = () => {
         setNoResults(true);
       }
     })();
-  }, [name, idPage]);
+  }, [name, idPage, pathTv]);
 
   return (
     <div className="category">

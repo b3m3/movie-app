@@ -15,14 +15,14 @@ const Info = ({ bg, title, name, release, date, runtime, time, vote, seasons, st
 
       <div className={style.row}>
         {release ? <h4>{reverseStr(release)}</h4> : date ? <h4>{reverseStr(date)}</h4> : null}
-        {runtime ? <h4>{runtime + ' min'}</h4> : time ? <h4>{time[0] + ' min'}</h4> : null}
+        {runtime ? <h4>{runtime + ' мин'}</h4> : time ? <h4>{time[0] + ' мин'}</h4> : null}
         <Rating data={vote} />
       </div>
 
       {seasons && 
         <div className={style.row}>
-          {seasons && <h4>Number of seasons: <b>{seasons}</b></h4>}
-          {status && <h4>{status}</h4>}
+          {seasons && <h4>Количество сезонов: <b>{seasons}</b></h4>}
+          {status && <h4>{status === 'Ended' ? 'Завершённый' : 'He завершённый'}</h4>}
         </div>}
 
       <Countries countries={countries} />
@@ -30,7 +30,7 @@ const Info = ({ bg, title, name, release, date, runtime, time, vote, seasons, st
       <p>
         {overview ? overview : 'There is no description for this content.'}
       </p>
-  </div>
+    </div>
   );
 }
 
