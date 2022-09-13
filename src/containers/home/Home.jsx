@@ -35,14 +35,14 @@ const Home = ({ setErrorApi }) => {
         setErrorApi(true);
       }
     })();
-  }, [])
+  }, [setErrorApi])
 
   return (
     <section className={`${style.home} home`}>
       <div className="container">
         <>
           <Title 
-            title='Tranding'
+            title='Tranding' 
             icon={<ImFire/>}
             color={'red'}
           />
