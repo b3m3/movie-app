@@ -16,7 +16,7 @@ const Category = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
   const [totalPages, setTotalPages] = useState(null)
   const [currentPage, setCurrentPage] = useState(null);
-
+  
   const { category } = useParams();
   const idPage = useQueryParams().idPage;
   const pathTv = useQueryParams().pathTv;
@@ -45,7 +45,7 @@ const Category = ({ setErrorApi }) => {
         <Title
           title={category && changeUrlToStr(category)}
         />
-        <Cards
+        <Cards 
           resultsArray={resultsArray}
         />
         <Navigation

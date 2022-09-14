@@ -4,17 +4,3 @@
   grid-column-gap: 15px;
   grid-row-gap: 1.25rem;
 }
-
-/* swiper  */
-
-.swiper {
-  padding: 15px;
-}
-
-.slide {
-  width: 236px;
-}
-
-.slide p {
-  color: #fff;
-}

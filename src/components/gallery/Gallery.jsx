@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { CardsSlider } from '../cards/Cards';
+// import { CardsSlider } from '../cards/Cards';
+import Card from '../card/Card';
 import Title from '../../components/title/Title';
 import Error from '../error';
 
@@ -9,6 +10,7 @@ import { getApiResource } from '../../service/getApiResource';
 import { PAGE_ROOT } from '../../constans/api';
 import { changeStrToUrl } from '../../utils/utils';
 import { useQueryParams } from '../../hooks/useQueryParams';
+import withSlider from '../../hoc-helpers/withSlider';
 
 import style from './gallery.module.css';
 
@@ -16,6 +18,8 @@ const Gallery = ({ title, url, icon, color }) => {
   const [resultsArray, setResultsArray] = useState([]);
   const [errorApi, setErrorApi] = useState(false);
   const pathTv = useQueryParams().pathTv;
+
+  const CardsSlider = withSlider(Card, resultsArray, '236px', 'auto')
 
   useEffect(() => {
     (async () => {
@@ -30,7 +34,7 @@ const Gallery = ({ title, url, icon, color }) => {
   }, [url]);
 
   return (
-    <div className="category">
+    <div className="gallery">
       <div className="container">
         <Link
           className={style.link}

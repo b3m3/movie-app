@@ -21,8 +21,6 @@ import style from './home.module.css';
 
 const Home = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
-  const prev = useRef(null);
-  const next = useRef(null);
   const pathTv = useQueryParams().pathTv;
 
   useEffect(() => {
@@ -51,10 +49,7 @@ const Home = ({ setErrorApi }) => {
             className={style.swiper}
             spaceBetween={20}
             slidesPerView={1.355}
-            navigation={{
-              prevEl: prev.current,
-              nextEl: next.current
-            }}
+            navigation
           >
             {resultsArray && resultsArray.map(item => (
               <SwiperSlide 
@@ -86,9 +81,6 @@ const Home = ({ setErrorApi }) => {
                 </div>
               </SwiperSlide>
             ))}
-            
-            <Arrow ref={prev} />
-            <Arrow ref={next} next={true} />
           </Swiper>
         </>
       </div>

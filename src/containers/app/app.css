@@ -97,10 +97,11 @@ a {
   }
 }
 
-/* home slider */
+/* home */
 .home .swiper-slide-next h3, 
 .home .swiper-slide-next h4, 
 .home .swiper-slide-next p,
 .home .swiper-slide-next button {
   opacity: .065;
 }
+
