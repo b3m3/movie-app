@@ -1,3 +1,7 @@
+.home h3 {
+  line-height: 1.2;
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -10,35 +14,6 @@
 
 .box a {
   margin: 0 0 0 1.25rem;
-}
-
-.home .swiper {
-  margin-top: 1.25rem;
-  height: 31.25rem;
-  border-radius: 0 1.25rem 1.25rem 0;
-}
-
-.home .poster {
-  border: 1px solid #fff;
-}
-
-.slide {
-  position: relative;
-  display: grid;
-  grid-template: minmax(18.75rem, 1fr) / minmax(auto, 15.625rem) 1fr;
-  gap: 1.25rem;
-  padding: 2.5rem;
-  border-radius: 1.25rem;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 64rem) {
-  .slide {
-    grid-template: 0 1fr / 1fr;
-  }
-  .slide {
-    padding: 1.25rem;
-  }
 }
 
 @media screen and (max-width: 26.5625rem) {

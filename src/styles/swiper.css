@@ -1,10 +1,44 @@
+/* home slider */
+.home .swiper-slide-next h3, 
+.home .swiper-slide-next h4, 
+.home .swiper-slide-next p,
+.home .swiper-slide-next button,
+.home .swiper-slide-next span {
+  opacity: .065;
+}
+
+
+.home .swiper {
+  margin-top: 1.25rem;
+  height: 31.25rem;
+  border-radius: 0 1.25rem 1.25rem 0;
+  padding: 0 !important;
+}
+
+.home .swiper-slide {
+  position: relative;
+  display: grid;
+  grid-template: minmax(18.75rem, 1fr) / minmax(auto, 15.625rem) 1fr;
+  gap: 1.25rem;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 64rem) {
+  .home .swiper-slide {
+    grid-template: 0 1fr / 1fr;
+    padding: 1.25rem;
+  }
+} 
+
 /* buttons novigation */
 .swiper-button-prev, .swiper-button-next {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  min-width: 2.5rem;
+  max-height: 2.5rem;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.70);
   transform: translateY(-15px);
@@ -12,11 +46,11 @@
 }
 
 .swiper-button-prev {
-  left: 0;
+  left: 0 !important;
 }
 
 .swiper-button-next {
-  right: 0;
+  right: 0 !important;
 }
 
 .swiper-button-prev:hover, .swiper-button-next:hover {
@@ -24,8 +58,8 @@
 }
 
 .swiper-button-prev::after, .swiper-button-next::after {
-  color: #000;
-  font-size: 22px;
+  color: #000 !important;
+  font-size: 22px !important;
   font-weight: 900 !important;
 }
 

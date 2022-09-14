@@ -96,12 +96,3 @@ a {
     line-height: calc(42px + calc(82 - 42) * ((100vw - 320px) / (1330 - 320)));
   }
 }
-
-/* home */
-.home .swiper-slide-next h3, 
-.home .swiper-slide-next h4, 
-.home .swiper-slide-next p,
-.home .swiper-slide-next button {
-  opacity: .065;
-}
-

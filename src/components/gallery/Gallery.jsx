@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// import { CardsSlider } from '../cards/Cards';
 import Card from '../card/Card';
 import Title from '../../components/title/Title';
 import Error from '../error';

@@ -1,26 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
 
 import Title from '../../components/title/Title';
-import Backdrop from '../../components/images/backdrop/Backdrop';
-import Poster from '../../components/images/poster/Poster';
-import Button from '../../components/ui/button/Button';
-import Info from '../../components/info/Info';
+import HomeBody from './HomeBody';
+import withSlider from '../../hoc-helpers/withSlider';
 
-import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, ALL, LANG, RU } from '../../constans/api';
+import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, ALL, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
-import { useQueryParams } from '../../hooks/useQueryParams';
 import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 
 import { ImFire } from 'react-icons/im';
 
+import '../../styles/swiper.css';
 import style from './home.module.css';
 
 const Home = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
-  const pathTv = useQueryParams().pathTv;
+
+  const HomeSlider = withSlider(HomeBody, resultsArray, '100%', '1.355')
 
   useEffect(() => {
     (async () => {
@@ -37,51 +33,13 @@ const Home = ({ setErrorApi }) => {
   return (
     <section className={`${style.home} home`}>
       <div className="container">
-        <>
-          <Title 
-            title='Tranding' 
-            icon={<ImFire/>}
-            color={'red'}
-          />
-          <Swiper
-            modules={[Navigation]}
-            className={style.swiper}
-            spaceBetween={20}
-            slidesPerView={1.355}
-            navigation
-          >
-            {resultsArray && resultsArray.map(item => (
-              <SwiperSlide 
-                key={item.id}
-                className={style.slide}
-              >
-                <Backdrop
-                  src={item.backdrop_path}
-                  alt={item.title}
-                />
-                <Poster 
-                  src={item.poster_path}
-                  alt={item.title}
-                />
+        <Title 
+          title='Tranding' 
+          icon={<ImFire/>}
+          color={'red'}
+        />
 
-                <div className={style.box}>
-                  <Info 
-                    title={item.title} 
-                    name={item.name} 
-                    release={item.release_date}
-                    date={item.first_air_date}
-                    vote={item.vote_average}
-                    overview={item.overview.length > 150 ? item.overview.slice(0, 150) + '...' : item.overview}
-                  />
-
-                  <Link to={ item.name ? `${pathTv}${SERIES}${item.id}` : `${pathTv}${MOVIES}${item.id}` } >
-                    <Button name='More' />
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </>
+        <HomeSlider resultsArray={resultsArray} />
       </div>
     </section>
   );
