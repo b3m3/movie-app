@@ -1,16 +1,18 @@
 import Rating from '../rating/Rating';
-import Countries from '../lists/countries/Countries';
-import Genres from '../lists/genres/Genres';
 
 import { reverseStr } from '../../utils/utils';
 
 import style from './info.module.css'; 
 
-const Info = ({ bg, title, name, release, date, runtime, time, vote, seasons, status, countries, genres, overview }) => {
+const Info = ({ 
+  bg, title, name, release, date, runtime, time, vote, 
+  seasons, status, countries, genres, overview 
+  }) => {
+
   return (
     <div className={`${style.info} ${bg ? style.bg : null}`}>
       <h3>
-        {title ? title : name ? name : 'Title missing'}
+        {title ? title : name ? name : 'Название отсутсвует'}
       </h3>
 
       <div className={style.row}>
@@ -25,8 +27,18 @@ const Info = ({ bg, title, name, release, date, runtime, time, vote, seasons, st
           {status && <h4>{status === 'Ended' ? 'Завершённый' : 'He завершённый'}</h4>}
         </div>}
 
-      <Countries countries={countries} />
-      <Genres genres={genres} />
+      {countries && 
+        <ul className={style.countries}>
+          {countries.map(({name}) => (
+            <li key={name}>{name}</li>))}
+        </ul>}
+
+      {genres && 
+        <ul className={style.genres}>
+          {genres.map(({name}) => (
+            <li key={name}>{name}</li>))}
+        </ul>}
+
       <p>
         {overview ? overview : 'There is no description for this content.'}
       </p>

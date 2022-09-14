@@ -1,6 +1,0 @@
-.countries {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .625rem;
-  color: rgba(255, 255, 255, 0.65);
-}

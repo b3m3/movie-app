@@ -19,3 +19,28 @@
   align-items: center;
   gap: 1.25rem;
 }
+
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .625rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .625rem;
+  font-size: 1.125rem;
+}
+
+.genres li {
+  padding: .3125rem .625rem;
+  border-radius: .3125rem;
+  color: #46c07d;
+  background: rgb(255, 255, 255, .15);
+}
+
+.genres li::first-letter{
+  text-transform: uppercase;
+}
