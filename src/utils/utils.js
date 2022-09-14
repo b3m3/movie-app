@@ -15,4 +15,15 @@ export const roundNumber = num => {
   return num.toFixed(1).split('.')[1] === 0 
     ? +num.toFixed(1).split('.')[0] 
     : +num.toFixed(1).split('.').join('.');
-}
+};
+
+export const hoursToMinutes = num => {
+  const hours = Math.trunc(num / 60);
+  const minutes = num % 60;
+
+  return hours === 0
+    ? minutes + " мин"
+    : minutes === 0
+    ? hours + " ч"
+    : hours + " ч " + minutes + " мин"
+};

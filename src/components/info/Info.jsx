@@ -1,5 +1,6 @@
 import Rating from '../rating/Rating';
 import { reverseStr } from '../../utils/utils';
+import { hoursToMinutes } from '../../utils/utils';
 
 import style from './info.module.css';
 
@@ -24,9 +25,9 @@ const Info = ({
 
         {runtime && 
           runtime 
-            ? <h4>{runtime + ' мин'}</h4> 
+            ? <h4>{hoursToMinutes(runtime)}</h4> 
             : time 
-            ? <h4>{time[0] + ' мин'}</h4> 
+            ? <h4>{hoursToMinutes(time)}</h4> 
             : null}
 
         <Rating data={vote} />
