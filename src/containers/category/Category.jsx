@@ -12,9 +12,6 @@ import { changeUrlToStr } from '../../utils/utils';
 import withList from '../../hoc/withList';
 import { withErrorApi } from '../../hoc/withErrorApi';
 
-
-
-
 const Category = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
   const [totalPages, setTotalPages] = useState(null)

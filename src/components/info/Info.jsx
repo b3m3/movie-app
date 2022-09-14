@@ -1,14 +1,12 @@
 import Rating from '../rating/Rating';
 import { reverseStr } from '../../utils/utils';
 
-import style from './info.module.css'; 
+import style from './info.module.css';
 
 const Info = ({ 
   bg, title, name, release, date, runtime, time, vote, 
   seasons, status, countries, genres, overview 
   }) => {
-
-  
 
   return (
     <div className={`${style.info} ${bg ? style.bg : null}`}>
@@ -43,7 +41,7 @@ const Info = ({
             <h4>{status === 'Ended' ? 'Завершённый' : 'He завершённый'}</h4>}
         </div>}
 
-      {countries && 
+      {countries &&
         <ul className={style.countries}>
           {countries.map(({name}) => (
             <li key={name}>{name}</li>))}

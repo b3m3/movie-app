@@ -6,6 +6,8 @@ const withList = (Component, data, style) => {
 
     const flex = {
       display: 'flex',
+      gap: '10px',
+      flexWrapp: 'wrapp'
     }
 
     const grid = {
