@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
@@ -7,7 +7,6 @@ import Title from '../../components/title/Title';
 import Backdrop from '../../components/images/backdrop/Backdrop';
 import Poster from '../../components/images/poster/Poster';
 import Button from '../../components/ui/button/Button';
-import Arrow from '../../components/ui/arrow/Arrow';
 import Info from '../../components/info/Info';
 
 import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, SERIES, MOVIES, ALL, LANG, RU } from '../../constans/api';
