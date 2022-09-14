@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 
 import Title from '../../components/title/Title';
 import HomeBody from './HomeBody';
-import withSlider from '../../hoc-helpers/withSlider';
+import withSlider from '../../hoc/withSlider';
 
 import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, ALL, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
-import { withErrorApi } from '../../hoc-helpers/withErrorApi';
+import { withErrorApi } from '../../hoc/withErrorApi';
 
 import { ImFire } from 'react-icons/im';
 
