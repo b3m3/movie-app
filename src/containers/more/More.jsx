@@ -10,7 +10,7 @@ import Info from '../../components/info/Info';
 import { MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
-import { withErrorApi } from '../../hoc-helpers/withErrorApi';
+import { withErrorApi } from '../../hoc/withErrorApi';
 
 import style from './more.module.css';
 

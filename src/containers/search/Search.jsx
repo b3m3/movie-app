@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Cards } from '../../components/cards/Cards';
 import Title from '../../components/title/Title';
 import Navigation from '../../components/navigation/Navigation';
 import Error from '../../components/error/Error';
+import Card from '../../components/card/Card';
 
 import { MOVIEDB_ROOT, SEARCH, QUERY, MOVIEDB_API, PAGE_ROOT, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { changeUrlToStr } from '../../utils/utils';
+import withList from '../../hoc/withList';
 
 const Search = () => {
   const [resultsArray, setResultsArray] = useState(null);
@@ -21,6 +22,8 @@ const Search = () => {
   const { name } = useParams();
   const idPage = useQueryParams().idPage;
   const pathTv = useQueryParams().pathTv;
+
+  const CardList = withList(Card, resultsArray, 'grid');
   
   useEffect(() => {
     setCurrentPage(+idPage);
@@ -58,7 +61,7 @@ const Search = () => {
               <Title 
                 title={name && changeUrlToStr(name)}
               />
-              <Cards 
+              <CardList 
                 resultsArray={resultsArray}
               />
               <Navigation

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Cards } from '../../components/cards/Cards';
+import Card from '../../components/card/Card';
 import Title from '../../components/title/Title';
 import Navigation from '../../components/navigation/Navigation';
 
@@ -9,8 +9,11 @@ import { MOVIEDB_ROOT, MOVIEDB_API, PAGE_ROOT, LANG, RU } from '../../constans/a
 import { getApiResource } from '../../service/getApiResource';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { changeUrlToStr } from '../../utils/utils';
+import withList from '../../hoc/withList';
+import { withErrorApi } from '../../hoc/withErrorApi';
 
-import { withErrorApi } from '../../hoc-helpers/withErrorApi';
+
+
 
 const Category = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
@@ -20,6 +23,8 @@ const Category = ({ setErrorApi }) => {
   const { category } = useParams();
   const idPage = useQueryParams().idPage;
   const pathTv = useQueryParams().pathTv;
+
+  const CardList = withList(Card, resultsArray, 'grid');
 
   useEffect(() => {
     setCurrentPage(+idPage);
@@ -45,9 +50,11 @@ const Category = ({ setErrorApi }) => {
         <Title
           title={category && changeUrlToStr(category)}
         />
-        <Cards 
-          resultsArray={resultsArray}
+
+        <CardList
+         resultsArray={resultsArray} 
         />
+
         <Navigation
           currentPage={currentPage}
           idPage={idPage}

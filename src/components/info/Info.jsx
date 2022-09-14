@@ -1,5 +1,4 @@
 import Rating from '../rating/Rating';
-
 import { reverseStr } from '../../utils/utils';
 
 import style from './info.module.css'; 
@@ -9,6 +8,8 @@ const Info = ({
   seasons, status, countries, genres, overview 
   }) => {
 
+  
+
   return (
     <div className={`${style.info} ${bg ? style.bg : null}`}>
       <h3>
@@ -16,15 +17,30 @@ const Info = ({
       </h3>
 
       <div className={style.row}>
-        {release ? <h4>{reverseStr(release)}</h4> : date ? <h4>{reverseStr(date)}</h4> : null}
-        {runtime ? <h4>{runtime + ' мин'}</h4> : time ? <h4>{time[0] + ' мин'}</h4> : null}
+        {release && 
+          release 
+            ? <h4>{reverseStr(release)}</h4> 
+            : date 
+            ? <h4>{reverseStr(date)}</h4> 
+            : null}
+
+        {runtime && 
+          runtime 
+            ? <h4>{runtime + ' мин'}</h4> 
+            : time 
+            ? <h4>{time[0] + ' мин'}</h4> 
+            : null}
+
         <Rating data={vote} />
       </div>
 
-      {seasons && 
+      {seasons &&
         <div className={style.row}>
-          {seasons && <h4>Количество сезонов: <b>{seasons}</b></h4>}
-          {status && <h4>{status === 'Ended' ? 'Завершённый' : 'He завершённый'}</h4>}
+          {seasons && 
+            <h4>Количество сезонов: <b>{seasons}</b></h4>}
+
+          {status && 
+            <h4>{status === 'Ended' ? 'Завершённый' : 'He завершённый'}</h4>}
         </div>}
 
       {countries && 
@@ -40,7 +56,7 @@ const Info = ({
         </ul>}
 
       <p>
-        {overview ? overview : 'There is no description for this content.'}
+        {overview ? overview : 'Для этого контента описание отсутствует'}
       </p>
     </div>
   );
