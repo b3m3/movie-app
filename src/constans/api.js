@@ -33,8 +33,8 @@ export const WEEK= 'week';
 export const RU = 'ru';
 
 // images
-export const POSTER_S = 'https://image.tmdb.org/t/p/w500/';
-export const POSTER_B = 'https://image.tmdb.org/t/p/original/';
+export const POSTER_S = 'https://image.tmdb.org/t/p/w500';
+export const POSTER_B = 'https://image.tmdb.org/t/p/original';
 
 // movies
 export const MOVIES_POPULAR = MOVIEDB_ROOT+MOVIES+POPULAR+MOVIEDB_API+LANG+RU;
