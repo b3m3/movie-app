@@ -32,6 +32,8 @@ const More = ({ setErrorApi }) => {
     })();
   }, [id, pathTv, setErrorApi]);
 
+  console.log(resultsArray);
+
   return (
     <section>
       <div className="container">
