@@ -1,0 +1,16 @@
+.wrapp {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.logo {
+  max-width: 8.125rem;
+  max-height: 3.125rem;
+  object-fit: contain;
+  padding: 2px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+}

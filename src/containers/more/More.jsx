@@ -62,11 +62,13 @@ const More = ({ setErrorApi }) => {
                 date={resultsArray.first_air_date}
                 runtime={resultsArray.runtime}
                 time={resultsArray.episode_run_time}
+                companies={resultsArray.production_companies}
                 vote={resultsArray.vote_average}
                 seasons={resultsArray.number_of_seasons}
                 status={resultsArray.status}
                 countries={resultsArray.production_countries}
                 genres={resultsArray.genres}
+                tagline={resultsArray.tagline}
                 overview={resultsArray.overview}
               />
             </div>}

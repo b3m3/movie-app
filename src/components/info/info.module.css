@@ -4,10 +4,14 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 20px;
   color: #fff;
   border-radius: 1.25rem;
   flex: 1 1 auto;
+}
+
+.info h3 {
+  line-height: 1.1;
 }
 
 .bg {
@@ -43,4 +47,12 @@
 
 .genres li::first-letter{
   text-transform: uppercase;
+}
+
+.tagline {
+  color: var(--grey);
+}
+
+.overview {
+  flex: 1 1 auto;
 }

@@ -49,7 +49,7 @@ const Category = ({ setErrorApi }) => {
         />
 
         <CardList
-         resultsArray={resultsArray} 
+          resultsArray={resultsArray} 
         />
 
         <Navigation

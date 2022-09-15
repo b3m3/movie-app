@@ -1,12 +1,13 @@
 import Rating from '../rating/Rating';
 import { reverseStr } from '../../utils/utils';
 import { hoursToMinutes } from '../../utils/utils';
+import Logo from '../images/logo/Logo';
 
 import style from './info.module.css';
 
 const Info = ({ 
-  bg, title, name, release, date, runtime, time, vote, 
-  seasons, status, countries, genres, overview 
+  bg, title, name, release, date, runtime, time, vote, companies,
+  seasons, status, countries, genres, tagline, overview 
   }) => {
 
   return (
@@ -54,9 +55,14 @@ const Info = ({
             <li key={name}>{name}</li>))}
         </ul>}
 
-      <p>
+      {tagline && 
+        <h3 className={style.tagline}>{tagline}</h3>}
+
+      <p className={style.overview}>
         {overview ? overview : 'Для этого контента описание отсутствует'}
       </p>
+
+      <Logo companies={companies} />
     </div>
   );
 }

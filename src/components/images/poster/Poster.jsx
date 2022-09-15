@@ -5,7 +5,6 @@ import NoImage from './img/no-image.jpg';
 import style from './poster.module.css';
 
 const Poster = ({ hover, src, alt }) => {
-  console.log(POSTER_S+src);
   return (
     <div className={`${style.poster} ${hover ? style.hover : null}`}>
       <img
