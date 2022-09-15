@@ -20,7 +20,19 @@
     transform: scale(1.1);
   }
   
-  .poster.hover:hover {
-    box-shadow: 0 0 15px #fff;
+  .poster.hover.green:hover {
+    box-shadow: 0 0 15px rgba(94, 255, 0, 0.92);
+  }
+  .poster.hover.yellowGreen:hover {
+    box-shadow: 0 0 15px rgba(187, 255, 0, 0.92);
+  }
+  .poster.hover.yellow:hover {
+    box-shadow: 0 0 15px rgba(255, 238, 0, 0.92);
+  }
+  .poster.hover.orange:hover {
+    box-shadow: 0 0 15px rgba(255, 187, 0, 0.92);
+  }
+  .poster.hover.red:hover {
+    box-shadow: 0 0 15px rgba(255, 8, 0, 0.92);
   }
 }
