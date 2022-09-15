@@ -16,13 +16,10 @@ const Movies = () => {
   
   return (
     <section className="movies">
-      {movies.map(({ title, url, color, icon }) => (
+      {movies.map((props) => (
         <Gallery 
-          key={title}
-          title={title}
-          url={url}
-          color={color}
-          icon={icon}
+          key={props.title}
+          {...props}
         />))}
     </section>
   );

@@ -16,13 +16,10 @@ const Series = () => {
 
   return (
     <section className="series">
-      {series.map(({ title, url, color, icon }) => (
+      {series.map((props) => (
         <Gallery 
-          key={title}
-          title={title}
-          url={url}
-          color={color}
-          icon={icon}
+          key={props.title}
+          {...props}
         />))}
     </section>
   );
