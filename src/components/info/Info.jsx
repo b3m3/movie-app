@@ -51,8 +51,7 @@ const Info = ({
             className={style.homepage}
           >
             Homepage
-          </a>
-        }
+          </a>}
       </div>
 
       {seasons &&
@@ -80,7 +79,11 @@ const Info = ({
         <h3 className={style.tagline}>{tagline}</h3>}
 
       <p className={style.overview}>
-        {overview ? overview : 'Для этого контента описание отсутствует'}
+        {overview 
+          ? overview.toLowerCase().indexOf('сервер') 
+            ? overview.slice(0, overview.toLowerCase().indexOf('сервер')) 
+            : overview
+          : 'Для этого контента описание отсутствует'}
       </p>
 
       <Logo companies={companies} />

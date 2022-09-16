@@ -1,5 +1,5 @@
 export const MOVIEDB_ROOT = 'https://api.themoviedb.org/3/';
-export const MOVIEDB_API = `?api_key=${process.env.REACT_APP_API_KEY}`;
+export const MOVIEDB_API = '?api_key='+process.env.REACT_APP_API_KEY;
 
 export const MOVIES = 'movie/';
 export const SERIES = 'tv/';

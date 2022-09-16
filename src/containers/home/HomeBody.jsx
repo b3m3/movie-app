@@ -31,7 +31,7 @@ const HomeBody = ({
           release={release_date}
           date={first_air_date}
           vote={vote_average}
-          overview={overview.length > 150 ? overview.slice(0, 150) + '...' : overview}
+          overview={overview.length > 150 ? overview.slice(0, 150) + '....' : overview}
         />
 
         <Link to={ name ? `${pathTv}${SERIES}${id}` : `${pathTv}${MOVIES}${id}` } >
