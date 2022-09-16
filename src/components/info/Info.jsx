@@ -7,7 +7,7 @@ import style from './info.module.css';
 
 const Info = ({ 
   bg, title, name, release, date, runtime, time, vote, companies,
-  seasons, status, countries, genres, tagline, overview 
+  seasons, status, countries, genres, tagline, overview, imdb_id, homepage
   }) => {
 
   return (
@@ -32,6 +32,25 @@ const Info = ({
             : null}
 
         <Rating data={vote} />
+
+        {imdb_id && 
+          <a
+            href={`https://www.imdb.com/title/${imdb_id}`}
+            target={'_blank'}
+            className={style.imdb}
+          >
+            <span>IMDB</span> page
+          </a>}
+
+        {homepage && 
+          <a
+            href={homepage}
+            target={'_blank'}
+            className={style.homepage}
+          >
+            Homepage
+          </a>
+        }
       </div>
 
       {seasons &&

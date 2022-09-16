@@ -32,6 +32,8 @@ const More = ({ setErrorApi }) => {
     })();
   }, [id, pathTv, setErrorApi]);
 
+  console.log(resultsArray);
+
   return (
     <section>
       <div className="container">
@@ -70,6 +72,8 @@ const More = ({ setErrorApi }) => {
                 genres={resultsArray.genres}
                 tagline={resultsArray.tagline}
                 overview={resultsArray.overview}
+                imdb_id={resultsArray.imdb_id}
+                homepage={resultsArray.homepage}
               />
             </div>}
 

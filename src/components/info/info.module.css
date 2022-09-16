@@ -56,3 +56,44 @@
 .overview {
   flex: 1 1 auto;
 }
+
+.imdb {
+  color: var(--grey);
+  display: flex;
+  align-items: center;
+  gap: .3125rem;
+  transition: .3s;
+}
+
+.imdb span {
+  letter-spacing: -0.0625rem;
+  font-weight: 900;
+  color: #000;
+  background: rgb(245,197,24);
+  padding: 1px 3px;
+  border-radius: 3px;
+  transition: .3s;
+}
+
+.imdb:hover {
+  color: #fff;
+}
+
+.imdb:hover span {
+  box-shadow: 0 0 7px rgb(245,197,24);
+}
+
+.homepage {
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #000;
+  background-color: #fff;
+  text-decoration: underline;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: .3s;
+}
+
+.homepage:hover {
+  box-shadow: 0 0 7px #fff;
+}
