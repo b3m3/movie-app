@@ -1,11 +1,27 @@
 .rating {
-  min-width: 2.1875rem;
-  height: 2.1875rem;
+  position: relative;
+  z-index: 2;
+  min-width: 30px;
+  height: 20px;
   font-weight: 600;
   font-size: 18px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rating span:nth-child(1) {
+  position: relative;
+  z-index: 15;
   color: #000;
+}
+
+.rating span:nth-child(2) {
+  position: absolute;
+  z-index: 1;
+  top: -15px;
+  right: 2px;
+  font-size: 44px;
+  width: 2.1875rem;
+  height: 1.875rem;
 }

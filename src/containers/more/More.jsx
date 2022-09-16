@@ -32,8 +32,6 @@ const More = ({ setErrorApi }) => {
     })();
   }, [id, pathTv, setErrorApi]);
 
-  console.log(resultsArray);
-
   return (
     <section>
       <div className="container">
@@ -44,7 +42,7 @@ const More = ({ setErrorApi }) => {
             side={true}
           />
 
-          {resultsArray && 
+          {resultsArray &&
             <div className={style.body}>
               <Backdrop
                 src={resultsArray.backdrop_path}

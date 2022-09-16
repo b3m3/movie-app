@@ -37,6 +37,7 @@ const Info = ({
           <a
             href={`https://www.imdb.com/title/${imdb_id}`}
             target={'_blank'}
+            rel="noreferrer"
             className={style.imdb}
           >
             <span>IMDB</span> page
@@ -46,6 +47,7 @@ const Info = ({
           <a
             href={homepage}
             target={'_blank'}
+            rel="noreferrer"
             className={style.homepage}
           >
             Homepage
