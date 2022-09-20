@@ -1,4 +1,5 @@
 .card {
+  user-select: none;
   position: relative;
   display: grid;
   grid-template: 320px auto / 1fr;
@@ -8,11 +9,31 @@
   max-width: 29.0625rem;
 }
 
+.card a div {
+  height: 100%;
+}
+
 .rating {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 20px;
+  top: 20px;
   z-index: 3;
+}
+
+.favorite {
+  cursor: pointer;
+  position: absolute;
+  content: '';
+  top: 10px;
+  left: 15px;
+  z-index: 3;
+  font-size: 2rem;
+  color: rgba(196, 196, 196, 0.85);
+  transition: .2s;
+}
+
+.favorite:hover {
+  transform: scale(1.15);
 }
 
 .title {
