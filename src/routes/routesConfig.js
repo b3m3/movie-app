@@ -5,6 +5,7 @@ import Category from '../containers/category/Category';
 import Search from '../containers/search/Search';
 import More from '../containers/more/More';
 import NotFound from '../containers/notFound/NotFound';
+import Favorite from '../containers/favorite/Favorite';
 
 import { PAGE_ROOT, SEARCH } from '../constans/api';
 
@@ -20,6 +21,10 @@ const routesConfig = [
   {
     path: "/tv",
     element: <Series />
+  },
+  {
+    path: "/favorite",
+    element: <Favorite />
   },
   {
     path: "/:tv/:id",

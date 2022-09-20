@@ -9,6 +9,7 @@ const Header = () => {
     { path: `/`, name: 'Home' },
     { path: `/movie`, name: 'Movies' },
     { path: '/tv', name: 'Series' },
+    { path: '/favorite', name: 'Favorites' },
   ];
 
   return (

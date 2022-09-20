@@ -86,15 +86,16 @@
 
 .homepage {
   font-weight: 700;
-  letter-spacing: -1px;
-  color: #000;
-  background-color: #fff;
-  text-decoration: underline;
+  letter-spacing: -0.03rem;
+  color: rgba(255, 255, 255, .65);
+  background: linear-gradient(135deg, rgba(255,255,255, .1) 0%, rgba(255,255,255, .2) 100%);
+  border: 1px solid rgba(255, 255, 255, .2);
   padding: 2px 4px;
   border-radius: 3px;
   transition: .3s;
 }
 
 .homepage:hover {
-  box-shadow: 0 0 7px #fff;
+  text-shadow: 0 0 7px rgba(255, 255, 255, .5);
+  border: 1px solid rgba(255, 255, 255, .3);
 }
