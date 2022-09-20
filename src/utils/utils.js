@@ -27,3 +27,11 @@ export const hoursToMinutes = num => {
     ? hours + " ч"
     : hours + " ч " + minutes + " мин"
 };
+
+export const getCardColors = num => {
+  return num >= 8 ? 'green' 
+    : num >= 7 ? 'yellowGreen' 
+    : num >= 6 ? 'yellow' 
+    : num >= 5 ? 'orange' 
+    : 'red';
+};
