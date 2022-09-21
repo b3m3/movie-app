@@ -6,7 +6,6 @@
   gap: .625rem;
   text-decoration: none;
   text-align: center;
-  max-width: 29.0625rem;
 }
 
 .card a div {
@@ -29,11 +28,15 @@
   z-index: 3;
   font-size: 2rem;
   color: rgba(196, 196, 196, 0.85);
-  transition: .2s;
+  transition: .1s;
 }
 
 .favorite:hover {
-  transform: scale(1.15);
+  color: rgba(255, 165, 0, .75);
+}
+
+.favorite:active {
+  transform: scale(1.25);
 }
 
 .title {

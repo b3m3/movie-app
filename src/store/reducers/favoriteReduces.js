@@ -1,8 +1,10 @@
 import { omit } from 'lodash';
 
 import { ADD_MOVIE_TO_FAVORITE, REMOVE_MOVIE_FROME_FAVORITE } from "../constans/actionTypes";
+import { getLStorage } from '../../utils/localStorage';
 
-const initialState = {};
+const lStorageData = getLStorage('mdbfavorite');
+const initialState = lStorageData;
 
 export const favoriteReduces = (state = initialState, action) => {
   switch (action.type) {
@@ -17,4 +19,4 @@ export const favoriteReduces = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};

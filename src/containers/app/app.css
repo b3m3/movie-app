@@ -90,9 +90,30 @@ a {
   text-decoration: none;
 }
 
+.list-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(12.8125rem, 1fr)); */
+  grid-template-columns: repeat(auto-fill, 15.5rem);
+  justify-content: center;
+  grid-column-gap: .9375rem;
+  grid-row-gap: 1.25rem;
+}
+
+.list-flex {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 83.125rem) {
   h2 {
     font-size: calc(20px + calc(25 - 20) * ((100vw - 320px) / (1330 - 320)));
     line-height: calc(42px + calc(82 - 42) * ((100vw - 320px) / (1330 - 320)));
+  }
+}
+
+@media screen and (max-width: 53.125rem) {
+  .list-grid {
+    grid-template-columns: repeat(auto-fit, minmax(12.8125rem, 1fr));
   }
 }
