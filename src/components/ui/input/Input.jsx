@@ -24,7 +24,7 @@ const Input = () => {
       />
       <Link
         ref={link}
-        to={`${pathTv === '/' ? MOVIES : pathTv}${SEARCH}${inputValue}${PAGE_ROOT}1`}
+        to={`${pathTv === '/' || pathTv === 'favorite/' ? MOVIES : pathTv}${SEARCH}${inputValue}${PAGE_ROOT}1`}
         className={style.btn}
         onClick={() => setInputValue('')}
       >
