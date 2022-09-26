@@ -28,7 +28,7 @@ const Card = ({ pathTv, id, poster_path, title, name, vote_average }) => {
 
   useEffect(() => {
     storeData[id] ? setFavorite(true) : setFavorite(false)
-  }, [favorite, storeData]);
+  }, [favorite, storeData, id]);
 
   return (
     <div className={style.card} >
