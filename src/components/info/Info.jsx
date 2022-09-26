@@ -24,12 +24,11 @@ const Info = ({
             ? <h4>{reverseStr(date)}</h4> 
             : null}
 
-        {runtime && 
-          runtime 
-            ? <h4>{hoursToMinutes(runtime)}</h4> 
-            : time 
-            ? <h4>{hoursToMinutes(time)}</h4> 
-            : null}
+        {runtime 
+          ? <h4>{hoursToMinutes(runtime)}</h4> 
+          : time 
+          ? <h4>{hoursToMinutes(time[0])}</h4> 
+          : null}
 
         <Rating data={vote} />
 
