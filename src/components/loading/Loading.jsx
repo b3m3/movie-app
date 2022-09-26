@@ -1,11 +1,15 @@
 import style from './loading.module.css';
 
-import Load from './img/load.svg'
+import Spinner from './img/spin.svg';
+import PackMan from './img/pacman.svg';
 
-const Loading = () => {
+const Loading = ({ spin }) => {
   return (
     <div className={style.loading}>
-      <img src={Load} alt="Load" />
+      <img
+        src={spin ? Spinner : PackMan} 
+        alt="Load"
+      />
     </div>
   );
 }

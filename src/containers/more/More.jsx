@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import Loading from '../../components/loading/Loading';
 import Button from '../../components/ui/button/Button';
 import Video from '../../components/video/Video';
-import Backdrop from '../../components/images/backdrop';
 import Poster from '../../components/images/poster/Poster';
 import Info from '../../components/info/Info';
 
@@ -13,6 +13,8 @@ import { useQueryParams } from '../../hooks/useQueryParams';
 import { withErrorApi } from '../../hoc/withErrorApi';
 
 import style from './more.module.css';
+
+const Backdrop = lazy(() => import('../../components/images/backdrop'));
 
 const More = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
@@ -44,10 +46,12 @@ const More = ({ setErrorApi }) => {
 
           {resultsArray &&
             <div className={style.body}>
-              <Backdrop
-                src={resultsArray.backdrop_path}
-                alt={resultsArray.title}
-              />
+              <Suspense fallback={<Loading />}>
+                <Backdrop
+                  src={resultsArray.backdrop_path}
+                  alt={resultsArray.title}
+                />
+              </Suspense>
 
               <Poster 
                 src={resultsArray.poster_path}

@@ -10,7 +10,6 @@ import { MdFavorite } from 'react-icons/md';
 
 import style from './card.module.css';
 
-
 const Poster = lazy(() => import('../images/poster/Poster'));
 
 const Card = ({ pathTv, id, poster_path, title, name, vote_average }) => {
@@ -50,7 +49,7 @@ const Card = ({ pathTv, id, poster_path, title, name, vote_average }) => {
       </span>
 
       <Link to={`/${pathTv}${id}`}>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading spin />}>
           <Poster 
             src={poster_path}
             alt={title}
