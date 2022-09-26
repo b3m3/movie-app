@@ -10,6 +10,7 @@ import { PAGE_ROOT } from '../../constans/api';
 import { changeStrToUrl } from '../../utils/utils';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import withSlider from '../../hoc/withSlider';
+import { tabTitle } from '../../utils/utils';
 
 import style from './gallery.module.css';
 
@@ -18,19 +19,20 @@ const Gallery = ({ title, url, icon, color }) => {
   const [errorApi, setErrorApi] = useState(false);
   const pathTv = useQueryParams().pathTv;
 
-  const CardsSlider = withSlider(Card, resultsArray, '236px', 'auto')
+  const CardsSlider = withSlider(Card, resultsArray, '236px', 'auto');
 
   useEffect(() => {
     (async () => {
       const res = await getApiResource(url);
-
+      tabTitle(`Movies | ${pathTv[0].toUpperCase()}${pathTv.slice(1, -1)}`);
+      
       if (res) {
         setResultsArray(res.results);
       } else {
         setErrorApi(true);
       }
     })();
-  }, [url]);
+  }, [url, pathTv]);
 
   return (
     <div className="gallery">

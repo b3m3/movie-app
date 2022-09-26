@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-// import { MOVIES, SERIES } from '../../constans/api';
 import withList from '../../hoc/withList';
 import Card from '../../components/card/Card';
 import Title from '../../components/title/Title';
+import { tabTitle } from '../../utils/utils';
 
 import { MdFavorite } from 'react-icons/md';
 
@@ -15,6 +15,7 @@ const Favorite = () => {
   const CardList = withList(Card, favoriteData, 'grid');
 
   useEffect(() => {
+    tabTitle('Movies | Favorite')
     const arr = Object.entries(storeData);
     const res = arr.map(item => ({
       id: item[0],

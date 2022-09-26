@@ -35,3 +35,7 @@ export const getCardColors = num => {
     : num >= 5 ? 'orange' 
     : 'red';
 };
+
+export const tabTitle = title => {
+  return document.title = title;
+};
