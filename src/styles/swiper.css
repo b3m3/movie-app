@@ -10,7 +10,7 @@
 .home .swiper {
   margin-top: 1.25rem;
   height: 31.25rem;
-  border-radius: 0 1.25rem 1.25rem 0;
+  border-radius: 1.25rem;
   padding: 0 !important;
 }
 

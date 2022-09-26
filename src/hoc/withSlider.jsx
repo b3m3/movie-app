@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import '../styles/swiper.css';
 
-const withSlider = (Component, results, slideWidth, perView) => {
+const withSlider = (Component, results, slideWidth, breakpoints, slidesPerView) => {
   return () => {
     const pathTv = useQueryParams().pathTv;
 
@@ -16,8 +16,14 @@ const withSlider = (Component, results, slideWidth, perView) => {
           style={{padding: '15px'}}
           modules={[Navigation]}
           spaceBetween={20}
-          slidesPerView={`${perView}`}
           navigation
+          slidesPerView={slidesPerView ? 'auto' : null}
+          breakpoints={breakpoints 
+            ? {
+                0: {slidesPerView: 1},
+                768: {slidesPerView: 1.355}
+              }
+            : null}
         >
           {results && results.map((props, id) => (
             <SwiperSlide 

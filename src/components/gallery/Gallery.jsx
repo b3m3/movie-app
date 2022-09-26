@@ -19,7 +19,7 @@ const Gallery = ({ title, url, icon, color }) => {
   const [errorApi, setErrorApi] = useState(false);
   const pathTv = useQueryParams().pathTv;
 
-  const CardsSlider = withSlider(Card, resultsArray, '236px', 'auto');
+  const CardsSlider = withSlider(Card, resultsArray, '236px', false, true);
 
   useEffect(() => {
     (async () => {

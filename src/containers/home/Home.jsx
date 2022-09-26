@@ -17,7 +17,7 @@ import style from './home.module.css';
 const Home = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
 
-  const HomeSlider = withSlider(HomeBody, resultsArray, '100%', '1.355')
+  const HomeSlider = withSlider(HomeBody, resultsArray, '100%', true, false);
 
   useEffect(() => {
     (async () => {
@@ -41,7 +41,7 @@ const Home = ({ setErrorApi }) => {
           color={'red'}
         />
 
-        <HomeSlider resultsArray={resultsArray} />
+        <HomeSlider />
       </div>
     </section>
   );
