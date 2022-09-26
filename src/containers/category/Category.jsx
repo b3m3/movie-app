@@ -15,7 +15,6 @@ import { withErrorApi } from '../../hoc/withErrorApi';
 const Category = ({ setErrorApi }) => {
   const [resultsArray, setResultsArray] = useState(null);
   const [totalPages, setTotalPages] = useState(null)
-  const [currentPage, setCurrentPage] = useState(null);
   
   const { category } = useParams();
   const idPage = useQueryParams().idPage;
@@ -24,7 +23,6 @@ const Category = ({ setErrorApi }) => {
   const CardList = withList(Card, resultsArray, 'grid');
 
   useEffect(() => {
-    setCurrentPage(+idPage);
     window.scrollTo(0, 0);
     
     (async () => {
@@ -53,7 +51,6 @@ const Category = ({ setErrorApi }) => {
         />
 
         <Navigation
-          currentPage={currentPage}
           idPage={idPage}
           totalPages={totalPages}
         />

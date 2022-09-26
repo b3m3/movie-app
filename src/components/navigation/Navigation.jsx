@@ -7,7 +7,7 @@ import { PAGE_ROOT, SEARCH } from '../../constans/api';
 
 import style from './navigation.module.css';
 
-const Navigation = ({ idPage, currentPage, totalPages }) => {
+const Navigation = ({ idPage, totalPages }) => {
   const pathTv = useQueryParams().pathTv;
   const {name, category } = useParams();
 
@@ -21,7 +21,6 @@ const Navigation = ({ idPage, currentPage, totalPages }) => {
       >
         <Button 
           name="Prev"
-          onClick={() => currentPage && currentPage + 1}
           side={true}
           idPage={idPage}
         />
@@ -35,7 +34,6 @@ const Navigation = ({ idPage, currentPage, totalPages }) => {
       >
         <Button 
           name="Next"
-          onClick={() => currentPage && currentPage - 1}
           side={false}
           idPage={idPage}
         />
