@@ -67,7 +67,7 @@ main {
 h2 {
   display: inline-block;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.5625rem;
   line-height: 5.125rem;
   color: #fff;
 }
@@ -75,7 +75,7 @@ h2 {
 h3 {
   display: inline-block;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 1.4375rem;
   line-height: 2.625rem;
   color: #fff;
 }
@@ -109,6 +109,10 @@ a {
   h2 {
     font-size: calc(20px + calc(25 - 20) * ((100vw - 320px) / (1330 - 320)));
     line-height: calc(42px + calc(82 - 42) * ((100vw - 320px) / (1330 - 320)));
+  }
+  h3 {
+    font-size: calc(18px + calc(23 - 18) * ((100vw - 320px) / (1330 - 320)));
+    line-height: calc(38px + calc(62 - 38) * ((100vw - 320px) / (1330 - 320)));
   }
 }
 

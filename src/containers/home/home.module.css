@@ -15,9 +15,3 @@
 .box a {
   margin: 0 0 0 1.25rem;
 }
-
-@media screen and (max-width: 26.5625rem) {
-  .box p {
-    display: none;
-  }
-}
