@@ -1,14 +1,17 @@
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Poster from '../images/poster/Poster';
+import Loading from '../loading/Loading';
 import Rating from '../rating/Rating';
 import { setMovieToFavorite, removeMovieFromFavorite } from '../../store/actions/index';
 
 import { MdFavorite } from 'react-icons/md';
 
 import style from './card.module.css';
+
+
+const Poster = lazy(() => import('../images/poster/Poster'));
 
 const Card = ({ pathTv, id, poster_path, title, name, vote_average }) => {
   const [favorite, setFavorite] = useState(false);
@@ -47,12 +50,14 @@ const Card = ({ pathTv, id, poster_path, title, name, vote_average }) => {
       </span>
 
       <Link to={`/${pathTv}${id}`}>
-        <Poster 
-          src={poster_path}
-          alt={title}
-          hover={true}
-          vote_average={vote_average}
-        />
+        <Suspense fallback={<Loading />}>
+          <Poster 
+            src={poster_path}
+            alt={title}
+            hover={true}
+            vote_average={vote_average}
+          />
+        </Suspense>
       </Link>
 
       <p className={style.title}>

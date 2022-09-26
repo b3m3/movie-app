@@ -1,13 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
 import Backdrop from '../../components/images/backdrop/Backdrop';
 import Poster from '../../components/images/poster/Poster';
 import Button from '../../components/ui/button/Button';
-import Info from '../../components/info/Info';
-
 import { SERIES, MOVIES } from '../../constans/api';
+import Loading from '../../components/loading/Loading';
 
 import style from './home.module.css';
+
+const Info = lazy(() => import('../../components/info/Info'));
 
 const HomeBody = ({ 
   pathTv, id, backdrop_path, title, name, poster_path, 
@@ -23,16 +25,18 @@ const HomeBody = ({
         src={poster_path}
         alt={title}
       />
-
+      
       <div className={style.box}>
-        <Info 
-          title={title} 
-          name={name} 
-          release={release_date}
-          date={first_air_date}
-          vote={vote_average}
-          overview={overview.length > 150 ? overview.slice(0, 150) + '....' : overview}
-        />
+        <Suspense fallback={<Loading />}>
+          <Info 
+            title={title} 
+            name={name} 
+            release={release_date}
+            date={first_air_date}
+            vote={vote_average}
+            overview={overview.length > 150 ? overview.slice(0, 150) + '....' : overview}
+          />
+        </Suspense>
 
         <Link to={ name ? `${pathTv}${SERIES}${id}` : `${pathTv}${MOVIES}${id}` } >
           <Button name='More' />
