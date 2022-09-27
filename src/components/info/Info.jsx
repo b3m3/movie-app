@@ -26,7 +26,7 @@ const Info = ({
 
         {runtime 
           ? <h4>{hoursToMinutes(runtime)}</h4> 
-          : time 
+          : time && time.length > 0 
           ? <h4>{hoursToMinutes(time[0])}</h4> 
           : null}
 

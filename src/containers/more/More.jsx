@@ -45,21 +45,21 @@ const More = ({ setErrorApi }) => {
             side={true}
           />
 
+          <Suspense fallback={<Loading />}>
+            {resultsArray && 
+              <Backdrop
+                src={resultsArray.backdrop_path}
+                alt={resultsArray.title}/>}
+          </Suspense>
+
           {resultsArray &&
             <div className={style.body}>
-              <Suspense fallback={<Loading />}>
-                <Backdrop
-                  src={resultsArray.backdrop_path}
-                  alt={resultsArray.title}
-                />
-              </Suspense>
-
               <Poster 
                 src={resultsArray.poster_path}
                 alt={resultsArray.title}
               />
 
-              <span style={{position: 'absolute'}}>
+              <span className={style.favorite_wrapp}>
                 <FavoriteButton 
                   id={id}
                   pathTv={pathTv}

@@ -3,6 +3,8 @@
 }
 
 .body {
+  position: relative;
+  overflow: hidden;
   padding: 3.125rem 0;
   display: grid;
   gap: 1.875rem;
@@ -10,10 +12,17 @@
   grid-template: minmax(34.375rem, auto) / minmax(auto, 21.875rem) 1fr;
 }
 
+.favorite_wrapp {
+  position: absolute;
+  left: 0;
+  top: 50px;
+}
+
 @media screen and (max-width: 83.125rem) {
   .main {
     padding-top: calc(20px + calc(50 - 20) * ((100vw - 320px) / (1330 - 320)));
   }
+
   .body {
     gap: calc(15px + calc(50 - 15) * ((100vw - 320px) / (1330 - 320)));
   }
@@ -24,8 +33,16 @@
     display: grid;
     gap: 1.25rem;
     grid-template: auto / 1fr;
+    padding: 20px 0 0 0;
   }
+
   .image {
     display: none;
+  }
+
+  .favorite_wrapp {
+    left: unset;
+    right: 3.75rem;
+    top: 2.8125rem;
   }
 }
