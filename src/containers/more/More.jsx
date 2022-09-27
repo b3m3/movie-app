@@ -6,6 +6,7 @@ import Button from '../../components/ui/button/Button';
 import Video from '../../components/video/Video';
 import Poster from '../../components/images/poster/Poster';
 import Info from '../../components/info/Info';
+import FavoriteButton from '../../components/ui/favoriteButton';
 
 import { MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
@@ -57,6 +58,17 @@ const More = ({ setErrorApi }) => {
                 src={resultsArray.poster_path}
                 alt={resultsArray.title}
               />
+
+              <span style={{position: 'absolute'}}>
+                <FavoriteButton 
+                  id={id}
+                  pathTv={pathTv}
+                  poster_path={resultsArray.poster_path}
+                  title={resultsArray.title}
+                  name={resultsArray.name}
+                  vote_average={resultsArray.vote_average}
+                />
+              </span>
 
               <Info
                 bg={true}
