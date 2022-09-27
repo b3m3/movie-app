@@ -19,26 +19,6 @@
   z-index: 3;
 }
 
-.favorite {
-  cursor: pointer;
-  position: absolute;
-  content: '';
-  top: 10px;
-  left: 15px;
-  z-index: 3;
-  font-size: 2rem;
-  color: rgba(196, 196, 196, 0.85);
-  transition: .1s;
-}
-
-.favorite:hover {
-  color: rgba(255, 165, 0, .75);
-}
-
-.favorite:active {
-  transform: scale(1.25);
-}
-
 .title {
   color: #fff;
   line-height: 1.1;
