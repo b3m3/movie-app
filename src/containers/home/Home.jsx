@@ -5,7 +5,7 @@ import HomeBody from './HomeBody';
 import withSlider from '../../hoc/withSlider';
 import { tabTitle } from '../../utils/utils';
 
-import { MOVIEDB_ROOT, MOVIEDB_API, TRANDING, DAY, ALL, LANG, RU } from '../../constans/api';
+import { ALL_TRANDING } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { withErrorApi } from '../../hoc/withErrorApi';
 
@@ -21,7 +21,7 @@ const Home = ({ setErrorApi }) => {
 
   useEffect(() => {
     (async () => {
-      const res = await getApiResource(MOVIEDB_ROOT+TRANDING+ALL+DAY+MOVIEDB_API+LANG+RU);
+      const res = await getApiResource(ALL_TRANDING);
       tabTitle('Movies | Home');
 
       if (res) {

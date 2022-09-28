@@ -14,7 +14,9 @@ export const favoriteReduces = (state = initialState, action) => {
         ...action.payload
       };
     case REMOVE_MOVIE_FROME_FAVORITE:
-      return omit(state, [action.payload]);
+      return omit(
+        state, [action.payload]
+      );
   
     default:
       return state;
