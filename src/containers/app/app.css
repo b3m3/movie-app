@@ -1,24 +1,4 @@
-::-webkit-scrollbar {
-  width: 10px;
-  height: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #19161f;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #757279;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #646268;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background-color: #5a575e;
-}
+@import url('../../styles/scrollbar.css');
 
 :root {
   --container: 83.125rem;
