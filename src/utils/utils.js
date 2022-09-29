@@ -17,7 +17,7 @@ export const roundNumber = num => {
     : +num.toFixed(1).split('.').join('.');
 };
 
-export const hoursToMinutes = num => {
+export const minutesToHours = num => {
   const hours = Math.trunc(num / 60);
   const minutes = num % 60;
 
