@@ -1,13 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
-import Loading from '../loading/Loading';
-import Rating from '../rating/Rating';
-import FavoriteButton from '../ui/favoriteButton/FavoriteButton';
+import Loading from '../loading';
+import Rating from '../rating';
+import FavoriteButton from '../ui/favoriteButton';
 
 import style from './card.module.css';
 
-const Poster = lazy(() => import('../images/poster/Poster'));
+const Poster = lazy(() => import('../images/poster'));
 
 const Card = ({ pathTv, id, poster_path, title, name, vote_average }) => {
 

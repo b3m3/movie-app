@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import Title from '../../components/title/Title';
 import HomeBody from './HomeBody';
+import Title from '../../components/title';
 import withSlider from '../../hoc/withSlider';
 import { tabTitle } from '../../utils/utils';
-
 import { ALL_TRANDING } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';
 import { withErrorApi } from '../../hoc/withErrorApi';

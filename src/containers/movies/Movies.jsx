@@ -1,4 +1,4 @@
-import Gallery from '../../components/gallery/Gallery';
+import Gallery from '../../components/gallery';
 
 import { MOVIES_POPULAR, MOVIES_TOP_RATED, MOVIES_NOW_PLAYING, MOVIES_UPCOMING } from '../../constans/api';
 

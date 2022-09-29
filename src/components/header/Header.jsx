@@ -1,13 +1,13 @@
 import { NavLink } from 'react-router-dom';
 
-import Input from '../ui/input/Input';
+import Input from '../ui/input';
 
 import style from './header.module.css';
 
 const Header = () => {
   const links = [
-    { path: `/`, name: 'Home' },
-    { path: `/movie`, name: 'Movies' },
+    { path: '/', name: 'Home' },
+    { path: '/movie', name: 'Movies' },
     { path: '/tv', name: 'Series' },
     { path: '/favorite', name: 'Favorites' },
   ];

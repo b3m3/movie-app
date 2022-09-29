@@ -1,4 +1,4 @@
-import Gallery from '../../components/gallery/Gallery';
+import Gallery from '../../components/gallery';
 
 import { SERIES_POPULAR, SERIES_TOP_RATED, SERIES_ON_THE_AIR, SERIES_AIRING_TODAY } from '../../constans/api';
 

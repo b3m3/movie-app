@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Card from '../../components/card/Card';
-import Title from '../../components/title/Title';
-import Navigation from '../../components/navigation/Navigation';
+import Card from '../../components/card';
+import Title from '../../components/title';
+import Navigation from '../../components/navigation';
 
 import { MOVIEDB_ROOT, MOVIEDB_API, PAGE_ROOT, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';

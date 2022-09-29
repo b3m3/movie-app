@@ -1,11 +1,11 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import Loading from '../../components/loading/Loading';
-import Button from '../../components/ui/button/Button';
-import Video from '../../components/video/Video';
-import Poster from '../../components/images/poster/Poster';
-import Info from '../../components/info/Info';
+import Loading from '../../components/loading';
+import Button from '../../components/ui/button';
+import Video from '../../components/video';
+import Poster from '../../components/images/poster';
+import Info from '../../components/info';
 import FavoriteButton from '../../components/ui/favoriteButton';
 
 import { MOVIEDB_ROOT, MOVIEDB_API, LANG, RU } from '../../constans/api';

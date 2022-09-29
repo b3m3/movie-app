@@ -1,7 +1,6 @@
-import Rating from '../rating/Rating';
-import { reverseStr } from '../../utils/utils';
-import { minutesToHours } from '../../utils/utils';
-import Logo from '../images/logo/Logo';
+import { reverseStr, minutesToHours } from '../../utils/utils';
+import Rating from '../rating';
+import Logo from '../images/logo';
 
 import style from './info.module.css';
 

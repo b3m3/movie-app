@@ -1,15 +1,15 @@
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
-import Loading from '../../components/loading/Loading';
-import Poster from '../../components/images/poster/Poster';
-import Button from '../../components/ui/button/Button';
-import Info from '../../components/info/Info';
+import Loading from '../../components/loading';
+import Poster from '../../components/images/poster';
+import Button from '../../components/ui/button';
+import Info from '../../components/info';
 import { SERIES, MOVIES } from '../../constans/api';
 
 import style from './home.module.css';
 
-const Backdrop = lazy(() => import('../../components/images/backdrop/Backdrop'));
+const Backdrop = lazy(() => import('../../components/images/backdrop'));
 
 const HomeBody = ({ 
   pathTv, id, backdrop_path, title, name, poster_path, 

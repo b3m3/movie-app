@@ -2,9 +2,9 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 import withList from '../../hoc/withList';
-import Card from '../../components/card/Card';
-import Title from '../../components/title/Title';
 import { tabTitle } from '../../utils/utils';
+import Card from '../../components/card';
+import Title from '../../components/title';
 
 import { MdFavorite } from 'react-icons/md';
 

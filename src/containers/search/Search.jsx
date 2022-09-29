@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Title from '../../components/title/Title';
-import Navigation from '../../components/navigation/Navigation';
-import Error from '../../components/error/Error';
-import Card from '../../components/card/Card';
+import Title from '../../components/title';
+import Navigation from '../../components/navigation';
+import Error from '../../components/error';
+import Card from '../../components/card';
 
 import { MOVIEDB_ROOT, SEARCH, QUERY, MOVIEDB_API, PAGE_ROOT, LANG, RU } from '../../constans/api';
 import { getApiResource } from '../../service/getApiResource';

@@ -1,9 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
 
-import Button from '../ui/button/Button';
-
 import { useQueryParams } from '../../hooks/useQueryParams';
 import { PAGE_ROOT, SEARCH } from '../../constans/api';
+import Button from '../ui/button';
 
 import style from './navigation.module.css';
 

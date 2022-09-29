@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Card from '../card/Card';
-import Title from '../../components/title/Title';
+import Title from '../../components/title';
 import Error from '../error';
 
 import { getApiResource } from '../../service/getApiResource';
 import { PAGE_ROOT } from '../../constans/api';
-import { changeStrToUrl } from '../../utils/utils';
+import { changeStrToUrl, tabTitle } from '../../utils/utils';
 import { useQueryParams } from '../../hooks/useQueryParams';
 import withSlider from '../../hoc/withSlider';
-import { tabTitle } from '../../utils/utils';
 
 import style from './gallery.module.css';
 
