@@ -23,9 +23,9 @@
 .list a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--grey);
-  transition: .3s;
+  transition: .2s;
 }
 
 .list a:hover {
@@ -34,12 +34,6 @@
 
 .list :global(a.active) {
   color: #fff;
-}
-
-@media screen and (max-width: 83.125rem) {
-  .list a {
-    font-size: calc(16px + calc(20 - 16) * ((100vw - 320px) / (1330 - 320)));
-  }
 }
 
 @media screen and (max-width: 48rem) {
