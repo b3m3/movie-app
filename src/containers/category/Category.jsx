@@ -46,9 +46,7 @@ const Category = ({ setErrorApi }) => {
           title={category && changeUrlToStr(category)}
         />
 
-        <CardList
-          resultsArray={resultsArray} 
-        />
+        <CardList />
 
         <Navigation
           idPage={idPage}
