@@ -2,17 +2,17 @@ import Gallery from '../../components/gallery';
 
 import { SERIES_POPULAR, SERIES_TOP_RATED, SERIES_ON_THE_AIR, SERIES_AIRING_TODAY } from '../../constans/api';
 
-import {FaStar} from 'react-icons/fa';
-import {FaMicrophone} from 'react-icons/fa';
-import {IoIosToday} from 'react-icons/io';
-import {AiFillLike} from 'react-icons/ai';
+import {GiStarsStack} from 'react-icons/gi';
+import {GiFilmStrip} from 'react-icons/gi';
+import {BsCalendarDay} from 'react-icons/bs';
+import {FaMedal} from 'react-icons/fa';
 
 const Series = () => {
   const series = [
-    {title: 'Popular', color: 'orange', icon: <FaStar />, url: SERIES_POPULAR},
-    {title: 'On the air', color: 'grey', icon: <FaMicrophone />, url: SERIES_ON_THE_AIR},
-    {title: 'Airing today', color: 'red', icon: <IoIosToday />, url: SERIES_AIRING_TODAY},
-    {title: 'Top rated', color: 'lightblue', icon: <AiFillLike />, url: SERIES_TOP_RATED}]
+    {title: 'Popular', color: 'orange', icon: <GiStarsStack />, url: SERIES_POPULAR},
+    {title: 'On the air', color: 'lightslategrey', icon: <GiFilmStrip />, url: SERIES_ON_THE_AIR},
+    {title: 'Airing today', color: 'violet', icon: <BsCalendarDay />, url: SERIES_AIRING_TODAY},
+    {title: 'Top rated', color: 'lightblue', icon: <FaMedal />, url: SERIES_TOP_RATED}]
 
   return (
     <section className="series">
