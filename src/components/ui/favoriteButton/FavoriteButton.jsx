@@ -29,10 +29,18 @@ const Favorite = ({ id, title, name, poster_path, vote_average }) => {
 
   return (
     <button
-      className={style.favorite}
-      style={favorite ? {color: 'orange'} : null}
+      className={favorite ? `${style.favorited} ${style.favorite}` : style.favorite}
+      style={favorite ? {color: 'crimson'} : null}
       onClick={favorite ? removeMovie : addMovie}
     >
+      <MdFavorite />
+      <MdFavorite />
+      <MdFavorite />
+      <MdFavorite />
+      <MdFavorite />
+      <MdFavorite />
+      <MdFavorite />
+      <MdFavorite />
       <MdFavorite />
     </button>
   );

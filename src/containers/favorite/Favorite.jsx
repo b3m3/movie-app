@@ -31,7 +31,7 @@ const Favorite = () => {
         <Title 
           title={'Favorite'}
           icon={<MdFavorite />}
-          color={'orange'}
+          color={'crimson'}
         />
         {favoriteData && favoriteData.length 
           ? <CardList />

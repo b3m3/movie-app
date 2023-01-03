@@ -1,3 +1,96 @@
+@keyframes nt2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    left: -20px;
+    top: -20px;
+    opacity: 1;
+  }
+  100% {
+    left: -25px;
+    top: -25px;
+    opacity: 0;
+  }
+}
+@keyframes nt3 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    left: 30px;
+    top: 30px;
+    opacity: 1;
+  }
+  100% {
+    left: 40px;
+    top: 40px;
+    opacity: 0;
+  }
+}
+@keyframes nt4 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    left: -10px;
+    top: 40px;
+    opacity: 1;
+  }
+  100% {
+    left: -25px;
+    top: 55px;
+    opacity: 0;
+  }
+}
+@keyframes nt5 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    left: 25px;
+    top: -15px;
+    opacity: 1; 
+  }
+  100% {
+    left: 45px;
+    top: -25px;
+    opacity: 0;
+  }
+}
+@keyframes nt6 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    left: 8px;
+    top: -10px;
+    opacity: 1; 
+  }
+  100% {
+    left: 8px;
+    top: -15px;
+    opacity: 0;
+  }
+}
+@keyframes nt7 {
+  0% {
+    opacity: 0;
+    animation-duration: 1s;
+  }
+  50% {
+    opacity: 1;
+    left: 8px;
+    top: 25px;
+    animation-duration: 1s;
+  }
+  100% {
+    opacity: 0;
+    left: 8px;
+    top: 30px;
+  }
+}
+
 .favorite {
   cursor: pointer;
   position: absolute;
@@ -12,10 +105,59 @@
   transition: .1s;
 }
 
-.favorite:hover {
-  color: rgba(255, 165, 0, .75);
+.favorite.favorited > svg:nth-child(2) {
+  animation: nt2 linear;
+  animation-duration: .4s;
+}
+.favorite.favorited > svg:nth-child(3) {
+  animation: nt3 linear;
+  animation-duration: .4s;
+}
+.favorite.favorited > svg:nth-child(4) {
+  animation: nt4 linear;
+  animation-duration: .4s;
+}
+.favorite.favorited > svg:nth-child(5) {
+  animation: nt5 linear;
+  animation-duration: .4s;
+}
+.favorite.favorited > svg:nth-child(6) {
+  animation: nt6 linear;
+  animation-duration: .6s;
+}
+.favorite.favorited > svg:nth-child(7) {
+  animation: nt7 linear;
+  animation-duration: .6s;
 }
 
-.favorite:active {
-  transform: scale(1.25);
+.favorite svg {
+  position: absolute;
+  z-index: 2;
+}
+
+.favorite svg:not(:first-child) {
+  font-size: .9375rem;
+  z-index: 1;
+  opacity: 0;
+  left: 8px;
+  top: 8px;
+}
+
+.favorite svg:nth-child(2) {
+  color: #dc14bb;
+}
+.favorite svg:nth-child(3) {
+  color: #1421dc;
+}
+.favorite svg:nth-child(4) {
+  color: #14dcd2;
+}
+.favorite svg:nth-child(5) {
+  color: #3cdc14;
+}
+.favorite svg:nth-child(6) {
+  color: #dc6414;
+}
+.favorite svg:nth-child(7) {
+  color: #bedc14;
 }

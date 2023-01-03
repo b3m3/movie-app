@@ -8,6 +8,7 @@
 @media(any-hover: hover) {
   .link:hover {
     padding: 0 0 0 .8125rem;
+    letter-spacing: 4px;
   }
   .link:hover svg {
     transform: scale(1.25);
