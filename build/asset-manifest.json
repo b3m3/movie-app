@@ -1,25 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.8aee16f6.css",
-    "main.js": "./static/js/main.e071735f.js",
-    "static/css/12.f9cf3b08.chunk.css": "./static/css/12.f9cf3b08.chunk.css",
-    "static/js/12.550db01c.chunk.js": "./static/js/12.550db01c.chunk.js",
-    "static/css/134.f9cf3b08.chunk.css": "./static/css/134.f9cf3b08.chunk.css",
-    "static/js/134.4e55b37e.chunk.js": "./static/js/134.4e55b37e.chunk.js",
-    "static/media/error.png": "./static/media/error.a2dad8e88ff627b4c6b4.png",
+    "main.css": "./static/css/main.5ed27989.css",
+    "main.js": "./static/js/main.5b6cd5dd.js",
+    "static/css/556.af401a63.chunk.css": "./static/css/556.af401a63.chunk.css",
+    "static/js/556.0885b192.chunk.js": "./static/js/556.0885b192.chunk.js",
+    "static/media/error.png": "./static/media/error.446b712e8334a312d205.png",
     "static/media/no-image.jpg": "./static/media/no-image.e1ce751ef1b590f719f9.jpg",
     "static/media/spin.svg": "./static/media/spin.7386ea9e09c9a5e0b095bcc2c7510a46.svg",
     "static/media/pacman.svg": "./static/media/pacman.a9354c7abc66669f19a0ec13b342ce43.svg",
     "index.html": "./index.html",
-    "main.8aee16f6.css.map": "./static/css/main.8aee16f6.css.map",
-    "main.e071735f.js.map": "./static/js/main.e071735f.js.map",
-    "12.f9cf3b08.chunk.css.map": "./static/css/12.f9cf3b08.chunk.css.map",
-    "12.550db01c.chunk.js.map": "./static/js/12.550db01c.chunk.js.map",
-    "134.f9cf3b08.chunk.css.map": "./static/css/134.f9cf3b08.chunk.css.map",
-    "134.4e55b37e.chunk.js.map": "./static/js/134.4e55b37e.chunk.js.map"
+    "main.5ed27989.css.map": "./static/css/main.5ed27989.css.map",
+    "main.5b6cd5dd.js.map": "./static/js/main.5b6cd5dd.js.map",
+    "556.af401a63.chunk.css.map": "./static/css/556.af401a63.chunk.css.map",
+    "556.0885b192.chunk.js.map": "./static/js/556.0885b192.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8aee16f6.css",
-    "static/js/main.e071735f.js"
+    "static/css/main.5ed27989.css",
+    "static/js/main.5b6cd5dd.js"
   ]
 }
