@@ -2,13 +2,19 @@
   display: flex;
   align-items: flex-end;
   gap: 1.25rem;
+  margin: 1.25rem 0;
+  font-size: 1.25rem;
+  line-height: 100%;
+  text-transform: uppercase;
 }
 
 .icon {
-  transform: translateY(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.625rem;
 }
 
 .icon svg {
-  transition: .2s;
+  transition: .3s;
 }

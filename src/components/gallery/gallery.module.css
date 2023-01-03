@@ -2,10 +2,14 @@
   position: relative;
   display: inline-block;
   text-decoration: none;
+  transition: .3s;
 }
 
 @media(any-hover: hover) {
+  .link:hover {
+    padding: 0 0 0 .8125rem;
+  }
   .link:hover svg {
-    transform: scale(1.35);
+    transform: scale(1.25);
   }
 }
