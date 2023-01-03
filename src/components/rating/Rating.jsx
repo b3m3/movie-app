@@ -1,6 +1,6 @@
 import { roundNumber, getCardColors } from '../../utils/utils';
 
-import { MdMovie } from 'react-icons/md'
+import { TiStarburst } from 'react-icons/ti'
 
 import style from './rating.module.css';
 
@@ -15,7 +15,7 @@ const Rating = ({ data }) => {
       <span
         className={style[getCardColors(roundNumber(data))]}
       >
-        <MdMovie />
+        <TiStarburst />
       </span>
     </div>
   );
