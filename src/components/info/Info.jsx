@@ -2,6 +2,9 @@ import { reverseStr, minutesToHours } from '../../utils/utils';
 import Rating from '../rating';
 import Logo from '../images/logo';
 
+import {RiHomeWifiLine} from 'react-icons/ri';
+import {FaImdb} from 'react-icons/fa';
+
 import style from './info.module.css';
 
 const Info = ({ 
@@ -18,15 +21,15 @@ const Info = ({
       <div className={style.row}>
         {release && 
           release 
-            ? <h4>{reverseStr(release)}</h4> 
+            ? <p>{reverseStr(release)}</p> 
             : date 
-            ? <h4>{reverseStr(date)}</h4> 
+            ? <p>{reverseStr(date)}</p> 
             : null}
 
         {runtime 
-          ? <h4>{minutesToHours(runtime)}</h4> 
+          ? <p>{minutesToHours(runtime)}</p> 
           : time && time.length > 0 
-          ? <h4>{minutesToHours(time[0])}</h4> 
+          ? <p>{minutesToHours(time[0])}</p> 
           : null}
 
         <Rating data={vote} />
@@ -38,7 +41,7 @@ const Info = ({
             rel="noreferrer"
             className={style.imdb}
           >
-            <span>IMDB</span> page
+            <FaImdb />
           </a>}
 
         {homepage && 
@@ -48,17 +51,17 @@ const Info = ({
             rel="noreferrer"
             className={style.homepage}
           >
-            Homepage
+            <RiHomeWifiLine />
           </a>}
       </div>
 
       {seasons &&
         <div className={style.row}>
           {seasons && 
-            <h4>Количество сезонов: <b>{seasons}</b></h4>}
+            <p>Количество сезонов: <span>{seasons}</span></p>}
 
           {status && 
-            <h4>{status === 'Ended' ? 'Завершённый' : 'He завершённый'}</h4>}
+            <p>{status === 'Ended' ? 'Завершённый' : 'He завершённый'}</p>}
         </div>}
 
       {countries &&
